@@ -3,7 +3,7 @@
     <div v-for="(user) in users" :key="user.id" class="user-card">
       <div class="user-card__image" />
 
-      <div class="user-card__info">
+      <div class="user-card__info" @click="goToUserProfile(user.id)">
         <span class="user-card__info-name">{{ user.firstName }} {{ user.lastName }}</span>
         <span>{{ user.currentJob }}</span>
 
@@ -42,6 +42,11 @@ export default Vue.extend({
       default: [],
     },
   },
+  methods: {
+    goToUserProfile(userId: number) {
+      this.$router.push(`/perfil/${userId}`);
+    },
+  },
 });
 </script>
 
@@ -60,6 +65,7 @@ $fontFamily: 'AprovaSans', sans-serif;
   justify-content: center;
   align-items: center;
   border-radius: 8px;
+  cursor: pointer;
 
   &__image {
     width: 125px;
