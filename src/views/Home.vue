@@ -1,11 +1,16 @@
 <template>
-  <div class="list-container">
-    <UserCard :users="users" />
+  <div>
+    <Header />
+
+    <div class="list-container">
+      <UserCard :users="users" />
+    </div>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
+import Header from '@/components/Header.vue';
 import UserCard from '@/components/UserCard.vue';
 import usersMock from '@/mocks/usersMock';
 import { User } from '@/interfaces';
@@ -16,7 +21,10 @@ interface Data {
 
 export default Vue.extend({
   name: 'Home',
-  components: { UserCard },
+  components: {
+    Header,
+    UserCard,
+  },
   data(): Data {
     return {
       users: usersMock,
