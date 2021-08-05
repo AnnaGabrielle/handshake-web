@@ -23,7 +23,12 @@ export default Vue.extend({
 @import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Squada+One&display=swap');
 
-$fontFamily: 'Atkinson Hyperlegible', sans-serif;
+@font-face {
+  font-family: "AprovaSans";
+  src: url('./assets/fonts/Aprova-Regular.otf');
+}
+
+$fontFamily: 'AprovaSans', sans-serif;
 
 #app {
   font-family: $fontFamily;

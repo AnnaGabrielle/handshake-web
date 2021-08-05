@@ -1,6 +1,7 @@
 <template>
     <header>
-      <div>
+      <div class="app-name">
+        <img src="../assets/images/descologo.svg" alt="">
         <h5>Handshake</h5>
       </div>
       <div class="profile" @click="profileToggle">
@@ -9,7 +10,7 @@
           <div v-else> {{ userLetter }} </div>
         </md-avatar>
         <div class="name">
-        {{ meUser.firstName }}
+          {{ meUser.firstName }}
         </div>
       </div>
     </header>
@@ -42,10 +43,10 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-$headerFontFamily: 'Squada One', sans-serif;
+$fontFamily: 'AprovaSans', sans-serif;
 
 * {
-  font-family: $headerFontFamily;
+  font-family: $fontFamily;
 }
 
 header {
@@ -61,9 +62,17 @@ header {
   position: fixed;
   top: 0;
 }
+
+.app-name {
+  display: flex;
+}
+
 h5 {
   color: #999;
   font-size: 26px;
+  font-weight: bold;
+  margin-left: 8px;
+  letter-spacing: -1px;
 }
 
 .profile {

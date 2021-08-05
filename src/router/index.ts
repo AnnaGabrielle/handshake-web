@@ -13,7 +13,7 @@ const routes: Array<RouteConfig> = [
   },
   {
     path: '/perfil/:id',
-    name: 'Perfil',
+    name: 'Profile',
     component: Profile,
   },
 ];
