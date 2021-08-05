@@ -1,7 +1,7 @@
 <template>
     <header>
       <div>
-        <h5> Heandshake</h5>
+        <h5>Handshake</h5>
       </div>
       <div class="profile" @click="profileToggle">
         <md-avatar class="md-avatar-icon md-primary">
@@ -42,7 +42,15 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
+$headerFontFamily: 'Squada One', sans-serif;
+
+* {
+  font-family: $headerFontFamily;
+}
+
 header {
+  width: 100vw;
+  background: white;
   border-bottom: 2px solid rgba(153, 153, 153, 0.68) ;
   box-shadow: 0 0 5px #a8a8a8;
   padding: 20px 25px;
@@ -50,6 +58,8 @@ header {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
+  top: 0;
 }
 h5 {
   color: #999;

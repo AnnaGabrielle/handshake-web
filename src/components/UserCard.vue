@@ -1,13 +1,31 @@
 <template>
   <div class="users-list">
-    <div v-for="(user, index) in users" :key="index" class="user-card">
+    <div v-for="(user) in users" :key="user.id" class="user-card">
       <div class="user-card__image" />
 
       <div class="user-card__info">
         <span class="user-card__info-name">{{ user.firstName }} {{ user.lastName }}</span>
         <span>{{ user.currentJob }}</span>
-        <span></span>
-        <span></span>
+
+        <div class="interests">Interesses:
+          <span
+            class="user-card__info-interest"
+            v-for="(interest, index) in user.interests"
+            :key="index"
+          >
+            {{ interest }}
+          </span>
+        </div>
+
+        <div class="knowledges">Áreas de conhecimento:
+          <span
+            class="user-card__info-interest"
+            v-for="(knowledge, index) in user.knowledges"
+            :key="2*index"
+          >
+            {{ knowledge }}
+          </span>
+        </div>
       </div>
     </div>
   </div>
@@ -28,6 +46,8 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
+$fontFamily: 'Atkinson Hyperlegible', sans-serif;
+
 .users-list {
   width: 70%;
 }
@@ -39,23 +59,40 @@ export default Vue.extend({
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 8px;
 
   &__image {
     width: 125px;
     height: 125px;
     border-radius: 50%;
     background: white;
-    margin: 0 50px;
+    margin: 0 50px 0 25px;
   }
 
   &__info {
     flex-grow: 1;
     text-align: start;
-    font-size: 21px;
+    font-size: 17px;
 
-    span {
+    span, div {
+      font-family: $fontFamily;
       display: block;
       margin: 5px;
+    }
+
+    &-name {
+      font-size: 27px;
+      font-weight: bold;
+      margin-bottom: 12px !important;
+    }
+
+    .interests, .knowledges {
+      display: flex;
+      align-items: center;
+
+      span {
+        color: blue;
+      }
     }
   }
 }

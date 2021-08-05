@@ -4,4 +4,6 @@ export interface User {
   firstName: string;
   lastName: string;
   photo?: string;
+  interests: string[];
+  knowledges: string[];
 }
