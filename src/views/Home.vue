@@ -1,14 +1,14 @@
 <template>
   <div>
     <div class="list-container">
-      <UserCard :users="users" />
+      <UsersList :users="users" />
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
-import UserCard from '@/components/UserCard.vue';
+import UsersList from '@/components/UsersList.vue';
 import usersMock from '@/mocks/usersMock';
 import { User } from '@/interfaces';
 
@@ -19,7 +19,7 @@ interface Data {
 export default Vue.extend({
   name: 'Home',
   components: {
-    UserCard,
+    UsersList,
   },
   data(): Data {
     return {
