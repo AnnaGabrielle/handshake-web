@@ -1,9 +1,13 @@
 <template>
   <div class="users-list">
-    <div v-for="(user) in users" :key="user.id" class="user-card">
+    <div
+      v-for="(user) in users"
+      :key="user.id" class="user-card"
+      @click="goToUserProfile(user.id)"
+    >
       <div class="user-card__image" />
 
-      <div class="user-card__info" @click="goToUserProfile(user.id)">
+      <div class="user-card__info">
         <span class="user-card__info-name">{{ user.firstName }} {{ user.lastName }}</span>
         <span>{{ user.currentJob }}</span>
 
