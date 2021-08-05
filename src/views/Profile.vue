@@ -1,16 +1,20 @@
 <template>
   <div class="profile">
-    <div class="users-list">
-      <div class="user-card">
-        <div class="user-card__image" />
+    <div class="profile__user">
+      <div class="profile__user-card">
+        <div class="profile__user-card-image" />
 
-        <div class="user-card__info">
-          <span class="user-card__info-name">{{ users[0].firstName }} {{ users[0].lastName }}</span>
+        <div class="profile__user-card-info">
+          <span
+            class="profile__user-card-info-name"
+          >
+            {{ users[0].firstName }} {{ users[0].lastName }}
+          </span>
           <span>{{ users[0].currentJob }}</span>
 
-          <div class="interests">Interesses:
+          <div class="tags">Interesses:
             <span
-              class="user-card__info-interest"
+              class="profile__user-card__info-interests"
               v-for="(interest, index) in users[0].interests"
               :key="index"
             >
@@ -18,9 +22,9 @@
             </span>
           </div>
 
-          <div class="knowledges">Áreas de conhecimento:
+          <div class="tags">Áreas de conhecimento:
             <span
-              class="user-card__info-interest"
+              class="profile__user-card__info-knowledges"
               v-for="(knowledge, index) in users[0].knowledges"
               :key="2*index"
             >
@@ -57,19 +61,18 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-  $fontFamily: 'Atkinson Hyperlegible', sans-serif;
+$fontFamily: 'Atkinson Hyperlegible', sans-serif;
 
 .profile {
   padding-top: 120px;
   display: flex;
   justify-content: center;
-}
 
-.users-list {
-  width: 70%;
-}
+  &__user {
+    width: 70%;
+  }
 
-.user-card {
+  &__user-card {
   height: 325px;
   margin-bottom: 15px;
   background: #C4C4C4;
@@ -78,37 +81,38 @@ export default Vue.extend({
   align-items: center;
   border-radius: 8px;
 
-  &__image {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    background: white;
-    margin: 0 50px 0 25px;
-  }
-
-  &__info {
-    flex-grow: 1;
-    text-align: start;
-    font-size: 20px;
-
-    span, div {
-      font-family: $fontFamily;
-      display: block;
-      margin: 5px;
+    &-image {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: white;
+      margin: 0 50px 0 25px;
     }
 
-    &-name {
-      font-size: 32px;
-      font-weight: bold;
-      margin-bottom: 12px !important;
-    }
+    &-info {
+      flex-grow: 1;
+      text-align: start;
+      font-size: 20px;
 
-    .interests, .knowledges {
-      display: flex;
-      align-items: center;
+      span, div {
+        font-family: $fontFamily;
+        display: block;
+        margin: 5px;
+      }
 
-      span {
-        color: blue;
+      &-name {
+        font-size: 32px;
+        font-weight: bold;
+        margin-bottom: 12px !important;
+      }
+
+      .tags {
+        display: flex;
+        align-items: center;
+
+        span {
+          color: blue;
+        }
       }
     }
   }

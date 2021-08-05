@@ -19,7 +19,7 @@
 
         <div class="knowledges">Áreas de conhecimento:
           <span
-            class="user-card__info-interest"
+            class="user-card__info-knowledge"
             v-for="(knowledge, index) in user.knowledges"
             :key="2*index"
           >
