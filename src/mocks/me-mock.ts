@@ -5,6 +5,7 @@ const meUser: User = {
   firstName: 'Lucas',
   lastName: 'Ricarte',
   currentJob: 'Handshake office',
+  photo: 'https://image.flaticon.com/icons/png/512/194/194279.png',
   interests: ['produto'],
   knowledges: ['produto'],
 };
