@@ -22,7 +22,7 @@ export default Vue.extend({
       return meUser;
     },
     userLetter() {
-      return meUser.name.substring(0, 2);
+      return meUser.firstName[0] + meUser.lastName[0];
     },
   },
   data() {
