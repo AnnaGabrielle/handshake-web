@@ -1,6 +1,6 @@
 <template>
     <header>
-      <div class="app-name">
+      <div class="app-name" @click="goToHome()">
         <img src="../assets/images/descologo.svg" alt="">
         <h5>Handshake</h5>
       </div>
@@ -38,6 +38,9 @@ export default Vue.extend({
     profileToggle() {
       this.profileOpen = !this.profileOpen;
     },
+    goToHome() {
+      this.$router.push('/');
+    },
   },
 });
 </script>
@@ -65,6 +68,7 @@ header {
 
 .app-name {
   display: flex;
+  cursor: pointer;
 }
 
 h5 {
