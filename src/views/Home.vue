@@ -1,20 +1,23 @@
 <template>
-  <div class="home">
-    Handshake
+  <div class="list-container">
+    <UserCard />
   </div>
 </template>
 
 <script lang="ts">
+import UserCard from '@/components/UserCard.vue';
 import Vue from 'vue';
 
 export default Vue.extend({
+  components: { UserCard },
   name: 'Home',
 });
 </script>
 
 <style lang="scss" scoped>
-.home {
-  font-family: 'Squada One', cursive;
-  font-size: 50px;
+.list-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 </style>
