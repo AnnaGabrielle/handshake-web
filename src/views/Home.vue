@@ -10,3 +10,6 @@ export default Vue.extend({
   name: 'Home',
 });
 </script>
+
+<style lang="scss" scoped>
+</style>
