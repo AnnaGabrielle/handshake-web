@@ -34,6 +34,22 @@
         </div>
       </div>
     </div>
+
+    <div class="profile__bio">
+      <span>Quem sou eu</span>
+
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Dignissimos delectus sed molestias itaque.
+        Eius cum consequatur nisi! Ex culpa voluptates ducimus,
+        dignissimos animi provident minus similique
+        quasi dolor corrupti tempore?
+      </p>
+    </div>
+
+    <div class="profile__skills">
+      <span>Skills</span>
+    </div>
   </div>
 </template>
 
@@ -66,54 +82,91 @@ $fontFamily: 'Atkinson Hyperlegible', sans-serif;
 .profile {
   padding-top: 120px;
   display: flex;
-  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 
   &__user {
     width: 70%;
-  }
 
-  &__user-card {
-  height: 325px;
-  margin-bottom: 15px;
-  background: #C4C4C4;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 8px;
+    &-card {
+      height: 325px;
+      margin-bottom: 15px;
+      background: #C4C4C4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 8px;
 
-    &-image {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      background: white;
-      margin: 0 50px 0 25px;
-    }
-
-    &-info {
-      flex-grow: 1;
-      text-align: start;
-      font-size: 20px;
-
-      span, div {
-        font-family: $fontFamily;
-        display: block;
-        margin: 5px;
+      &-image {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background: white;
+        margin: 0 50px 0 25px;
       }
 
-      &-name {
-        font-size: 32px;
-        font-weight: bold;
-        margin-bottom: 12px !important;
-      }
+      &-info {
+        flex-grow: 1;
+        text-align: start;
+        font-size: 20px;
 
-      .tags {
-        display: flex;
-        align-items: center;
+        span, div {
+          font-family: $fontFamily;
+          display: block;
+          margin: 5px;
+        }
 
-        span {
-          color: blue;
+        &-name {
+          font-size: 32px;
+          font-weight: bold;
+          margin-bottom: 12px !important;
+        }
+
+        .tags {
+          display: flex;
+          align-items: center;
+
+          span {
+            color: blue;
+          }
         }
       }
+    }
+  }
+
+  &__bio {
+    width: 70%;
+    margin-bottom: 15px;
+    padding: 25px;
+    background: #C4C4C4;
+    border-radius: 8px;
+    font-family: $fontFamily;
+    font-weight: 700;
+    font-size: 28px;
+
+    p {
+      font-weight: 400;
+      font-size: 19px;
+      margin-top: 18px;
+      line-height: 26px;
+    }
+  }
+
+  &__skills {
+    width: 70%;
+    margin-bottom: 15px;
+    padding: 25px;
+    background: #C4C4C4;
+    border-radius: 8px;
+    font-family: $fontFamily;
+    font-weight: 700;
+    font-size: 28px;
+
+    p {
+      font-weight: 400;
+      font-size: 19px;
+      margin-top: 18px;
+      line-height: 26px;
     }
   }
 }
