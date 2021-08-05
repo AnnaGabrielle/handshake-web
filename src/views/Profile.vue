@@ -8,14 +8,14 @@
           <span
             class="profile__user-card-info-name"
           >
-            {{ users[0].firstName }} {{ users[0].lastName }}
+            {{ user.firstName }} {{ user.lastName }}
           </span>
-          <span>{{ users[0].currentJob }}</span>
+          <span>{{ user.currentJob }}</span>
 
           <div class="tags">Interesses:
             <span
               class="profile__user-card__info-interests"
-              v-for="(interest, index) in users[0].interests"
+              v-for="(interest, index) in user.interests"
               :key="index"
             >
               {{ interest }}
@@ -25,7 +25,7 @@
           <div class="tags">Áreas de conhecimento:
             <span
               class="profile__user-card__info-knowledges"
-              v-for="(knowledge, index) in users[0].knowledges"
+              v-for="(knowledge, index) in user.knowledges"
               :key="2*index"
             >
               {{ knowledge }}
@@ -59,19 +59,22 @@ import usersMock from '@/mocks/usersMock';
 import { User } from '@/interfaces';
 
 interface Data {
-  users: User[];
+  user: User | null;
 }
 
 export default Vue.extend({
   data(): Data {
     return {
-      users: usersMock,
+      user: null,
     };
   },
   computed: {
     profileUserId(): number {
       return Number(this.$route.params.id);
     },
+  },
+  mounted() {
+    this.user = usersMock.find((u) => u.id === this.profileUserId) || null;
   },
 });
 </script>
