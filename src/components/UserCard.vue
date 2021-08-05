@@ -46,6 +46,8 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
+$fontFamily: 'Atkinson Hyperlegible', sans-serif;
+
 .users-list {
   width: 70%;
 }
@@ -64,17 +66,24 @@ export default Vue.extend({
     height: 125px;
     border-radius: 50%;
     background: white;
-    margin: 0 50px;
+    margin: 0 50px 0 25px;
   }
 
   &__info {
     flex-grow: 1;
     text-align: start;
-    font-size: 21px;
+    font-size: 17px;
 
     span, div {
+      font-family: $fontFamily;
       display: block;
       margin: 5px;
+    }
+
+    &-name {
+      font-size: 27px;
+      font-weight: bold;
+      margin-bottom: 12px !important;
     }
 
     .interests, .knowledges {

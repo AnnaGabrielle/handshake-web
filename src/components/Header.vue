@@ -39,6 +39,12 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
+$headerFontFamily: 'Squada One', sans-serif;
+
+* {
+  font-family: $headerFontFamily;
+}
+
 header {
   width: 100vw;
   background: white;
