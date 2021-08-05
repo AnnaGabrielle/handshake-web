@@ -1,8 +1,10 @@
-const meUser = {
+import { User } from '@/interfaces';
+
+const meUser: User = {
   id: 4,
-  name: 'Ricarte',
-  place: 'Handshake office',
-  photo: null,
+  firstName: 'Lucas',
+  lastName: 'Ricarte',
+  currentJob: 'Handshake office',
 };
 
 export default meUser;

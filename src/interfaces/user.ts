@@ -3,4 +3,5 @@ export interface User {
   currentJob: string;
   firstName: string;
   lastName: string;
+  photo?: string;
 }
