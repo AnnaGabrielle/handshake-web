@@ -39,6 +39,7 @@ export default Vue.extend({
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 8px;
 
   &__image {
     width: 125px;
