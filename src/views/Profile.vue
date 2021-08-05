@@ -35,7 +35,7 @@
       </div>
     </div>
 
-    <div class="profile__bio">
+    <div class="profile__section">
       <span>Quem sou eu</span>
 
       <p>
@@ -47,7 +47,7 @@
       </p>
     </div>
 
-    <div class="profile__skills">
+    <div class="profile__section">
       <span>Skills</span>
     </div>
   </div>
@@ -134,25 +134,7 @@ $fontFamily: 'Atkinson Hyperlegible', sans-serif;
     }
   }
 
-  &__bio {
-    width: 70%;
-    margin-bottom: 15px;
-    padding: 25px;
-    background: #C4C4C4;
-    border-radius: 8px;
-    font-family: $fontFamily;
-    font-weight: 700;
-    font-size: 28px;
-
-    p {
-      font-weight: 400;
-      font-size: 19px;
-      margin-top: 18px;
-      line-height: 26px;
-    }
-  }
-
-  &__skills {
+  &__section {
     width: 70%;
     margin-bottom: 15px;
     padding: 25px;
