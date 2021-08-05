@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    Handshake
   </div>
 </template>
 
@@ -12,4 +13,8 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
+.home {
+  font-family: 'Squada One', cursive;
+  font-size: 50px;
+}
 </style>
