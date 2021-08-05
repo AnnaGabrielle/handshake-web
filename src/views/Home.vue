@@ -1,7 +1,10 @@
 <template>
-  <div>
+  <div class="home">
+    <div class="input-area">
+        <input v-model="userSearch" class="input" type="text"/>
+    </div>
     <div class="list-container">
-      <UserCard :users="users" />
+      <UserCard :users="usersFiltered" />
     </div>
   </div>
 </template>
@@ -14,6 +17,7 @@ import { User } from '@/interfaces';
 
 interface Data {
   users: User[];
+  userSearch: string;
 }
 
 export default Vue.extend({
@@ -24,15 +28,70 @@ export default Vue.extend({
   data(): Data {
     return {
       users: usersMock,
+      userSearch: '',
     };
+  },
+  computed: {
+    usersFiltered(): User[] {
+      return this.searchUser();
+    },
+  },
+  methods: {
+    searchUser() {
+      if (this.userSearch === '') return this.users;
+      const allUsers = this.users.reduce((usersFounded: User[], user: User) => {
+        const foundedField = this.searchEachFild(user.id);
+        if (!foundedField) return usersFounded;
+        usersFounded.push(user);
+        return usersFounded;
+      }, []);
+      return allUsers;
+    },
+    searchEachFild(id: number) {
+      const user = this.users.find((userFind) => userFind.id === id);
+      if (!user) return;
+      const foundField = (Object.values(user)).find((field) => {
+        const processedField = this.processString(field.toString());
+        return processedField.includes(this.processString(this.userSearch));
+      });
+      // eslint-disable-next-line consistent-return
+      return foundField;
+    },
+    processString(item: string) {
+      return item
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .toLowerCase();
+    },
   },
 });
 </script>
 
 <style lang="scss" scoped>
+.home {
+  padding-top: 120px;
+}
+
+.input-area {
+  display: flex;
+  justify-content: center;
+}
+
+input {
+  width: 50%;
+  height: 48px;
+  border: 1px solid #999;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  padding: 20px;
+  outline: none;
+}
+input:focus {
+  border: 1px solid #666;
+}
+
 .list-container {
   width: 100%;
-  padding-top: 120px;
   display: flex;
   justify-content: center;
 }
