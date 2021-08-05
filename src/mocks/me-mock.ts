@@ -5,6 +5,8 @@ const meUser: User = {
   firstName: 'Lucas',
   lastName: 'Ricarte',
   currentJob: 'Handshake office',
+  interests: ['produto'],
+  knowledges: ['produto'],
 };
 
 export default meUser;

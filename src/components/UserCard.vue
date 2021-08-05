@@ -1,13 +1,31 @@
 <template>
   <div class="users-list">
-    <div v-for="(user, index) in users" :key="index" class="user-card">
+    <div v-for="(user) in users" :key="user.id" class="user-card">
       <div class="user-card__image" />
 
       <div class="user-card__info">
         <span class="user-card__info-name">{{ user.firstName }} {{ user.lastName }}</span>
         <span>{{ user.currentJob }}</span>
-        <span></span>
-        <span></span>
+
+        <div class="interests">Interesses:
+          <span
+            class="user-card__info-interest"
+            v-for="(interest, index) in user.interests"
+            :key="index"
+          >
+            {{ interest }}
+          </span>
+        </div>
+
+        <div class="knowledges">Áreas de conhecimento:
+          <span
+            class="user-card__info-interest"
+            v-for="(knowledge, index) in user.knowledges"
+            :key="2*index"
+          >
+            {{ knowledge }}
+          </span>
+        </div>
       </div>
     </div>
   </div>
@@ -54,9 +72,18 @@ export default Vue.extend({
     text-align: start;
     font-size: 21px;
 
-    span {
+    span, div {
       display: block;
       margin: 5px;
+    }
+
+    .interests, .knowledges {
+      display: flex;
+      align-items: center;
+
+      span {
+        color: blue;
+      }
     }
   }
 }

@@ -1,7 +1,5 @@
 <template>
   <div>
-    <Header />
-
     <div class="list-container">
       <UserCard :users="users" />
     </div>
@@ -10,7 +8,6 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import Header from '@/components/Header.vue';
 import UserCard from '@/components/UserCard.vue';
 import usersMock from '@/mocks/usersMock';
 import { User } from '@/interfaces';
@@ -22,7 +19,6 @@ interface Data {
 export default Vue.extend({
   name: 'Home',
   components: {
-    Header,
     UserCard,
   },
   data(): Data {
@@ -36,6 +32,7 @@ export default Vue.extend({
 <style lang="scss" scoped>
 .list-container {
   width: 100%;
+  padding-top: 120px;
   display: flex;
   justify-content: center;
 }
