@@ -46,7 +46,7 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-$fontFamily: 'Atkinson Hyperlegible', sans-serif;
+$fontFamily: 'AprovaSans', sans-serif;
 
 .users-list {
   width: 70%;
@@ -84,6 +84,7 @@ $fontFamily: 'Atkinson Hyperlegible', sans-serif;
       font-size: 27px;
       font-weight: bold;
       margin-bottom: 12px !important;
+      letter-spacing: -0.6px;
     }
 
     .interests, .knowledges {
