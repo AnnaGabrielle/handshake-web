@@ -77,7 +77,7 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-$fontFamily: 'Atkinson Hyperlegible', sans-serif;
+$fontFamily: 'AprovaSans', sans-serif;
 
 .profile {
   padding-top: 120px;
@@ -120,6 +120,7 @@ $fontFamily: 'Atkinson Hyperlegible', sans-serif;
           font-size: 32px;
           font-weight: bold;
           margin-bottom: 12px !important;
+          letter-spacing: -1px;
         }
 
         .tags {
@@ -143,10 +144,11 @@ $fontFamily: 'Atkinson Hyperlegible', sans-serif;
     font-family: $fontFamily;
     font-weight: 700;
     font-size: 28px;
+    letter-spacing: -1px;
 
     p {
       font-weight: 400;
-      font-size: 19px;
+      font-size: 17px;
       margin-top: 18px;
       line-height: 26px;
     }
