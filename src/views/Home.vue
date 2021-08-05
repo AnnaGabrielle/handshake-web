@@ -1,16 +1,27 @@
 <template>
   <div class="list-container">
-    <UserCard />
+    <UserCard :users="users" />
   </div>
 </template>
 
 <script lang="ts">
-import UserCard from '@/components/UserCard.vue';
 import Vue from 'vue';
+import UserCard from '@/components/UserCard.vue';
+import usersMock from '@/mocks/usersMock';
+import { User } from '@/interfaces';
+
+interface Data {
+  users: User[];
+}
 
 export default Vue.extend({
-  components: { UserCard },
   name: 'Home',
+  components: { UserCard },
+  data(): Data {
+    return {
+      users: usersMock,
+    };
+  },
 });
 </script>
 
