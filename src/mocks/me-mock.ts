@@ -1,7 +1,7 @@
 import { User } from '@/interfaces';
 
 const meUser: User = {
-  id: 4,
+  id: 3,
   firstName: 'Lucas',
   lastName: 'Ricarte',
   bio: '',

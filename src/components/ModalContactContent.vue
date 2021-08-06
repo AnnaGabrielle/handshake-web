@@ -1,17 +1,32 @@
 <template>
   <div class="container">
     <p>
-      {{ profileUser.firstName }} pode ser contatado(a) a partir dos seguintes meios.
+      Fulano pode ser contatado a partir dos seguintes meios.
       Escolha um disponível e boa conversa! Handshake! :)
     </p>
     <div class="btns">
       <div class="first-btns-block">
-        <button :class="{ 'disabled': !currentUser.contact.whatsapp }">Whatsapp</button>
-        <button :class="{ 'disabled': !currentUser.contact.telegram }">Telegram</button>
+        <button
+          :class="{ 'disabled': !profileUser.contact.whatsapp }"
+          @click="openWhatsApp()">
+          Whatsapp
+        </button>
+        <button
+        :class="{ 'disabled': !profileUser.contact.telegram }"
+        @click="openTelegram()">
+        Telegram</button>
       </div>
       <div class="last-btns-block">
-        <button :class="{ 'disabled': !currentUser.contact.facebook }">Facebook</button>
-        <button :class="{ 'disabled': !currentUser.contact.email }">E-mail</button>
+        <button
+          :class="{ 'disabled': !profileUser.contact.facebook }"
+          @click="openFacebook()"
+          >Facebook
+        </button>
+        <button
+          :class="{ 'disabled': !profileUser.contact.email }"
+          @click="openEmail()"
+          >E-mail
+        </button>
       </div>
     </div>
   </div>
@@ -28,6 +43,28 @@ export default Vue.extend({
   computed: {
     currentUser(): User {
       return this.$store.getters.currentUser;
+    },
+  },
+  methods: {
+    openWhatsApp() {
+      if (!this.profileUser.contact.whatsapp) return;
+      const messegeWhatsapp = `Oi, ${this.profileUser.firstName} ${this.profileUser.lastName}! Eu sou ${this.currentUser.firstName} ${this.currentUser.lastName} e te encontrei no Handshake! Podemos nos falar?%20
+      `;
+      const whatsappURL = `https://api.whatsapp.com/send?phone=${this.profileUser.contact.whatsapp}&text=${messegeWhatsapp}`;
+      window.open(whatsappURL);
+    },
+    openTelegram() {
+      if (!this.profileUser.contact.telegram) return;
+      const telegramURL = `https://t.me/${this.profileUser.contact.telegram}`;
+      window.open(telegramURL);
+    },
+    openFacebook() {
+      if (!this.profileUser.contact.facebook) return;
+      window.open(this.profileUser.contact.facebook);
+    },
+    openEmail() {
+      if (!this.profileUser.contact.email) return;
+      window.location.href = `mailto:${this.profileUser.contact.email}`;
     },
   },
 });
