@@ -128,7 +128,7 @@ export default Vue.extend({
   },
   methods: {
     redirectToHome() {
-      this.$router.push('/');
+      this.$router.push('/inicio');
     },
     toggleModal(modalType: 'contact' | 'rating') {
       this.modalType = modalType;
