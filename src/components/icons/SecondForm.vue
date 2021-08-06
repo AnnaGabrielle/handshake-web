@@ -95,7 +95,6 @@ export default Vue.extend({
   },
   methods: {
     saveFormOne() {
-      console.log('salvei');
       this.$emit('secondFormSaved');
     },
   },

@@ -1,6 +1,7 @@
 import { User } from '@/interfaces';
 
-const meUser: User = {
+// eslint-disable-next-line import/prefer-default-export
+export const meUser: User = {
   id: 3,
   firstName: 'Lucas',
   lastName: 'Ricarte',
@@ -21,5 +22,3 @@ const meUser: User = {
     whatsapp: '+5581995510819',
   },
 };
-
-export default meUser;

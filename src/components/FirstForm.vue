@@ -74,7 +74,7 @@ import Vue from 'vue';
 import {
   hardSkills, softSkills, interestedArea, knownArea,
 } from '@/mocks/skillsMock';
-import meUser from '@/mocks/me-mock';
+import { meUser } from '@/mocks/me-mock';
 
 interface UserInfomation {
   selectedHardSkills: Array<string>;
