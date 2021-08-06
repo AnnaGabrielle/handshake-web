@@ -12,6 +12,12 @@ const meUser: User = {
     hard: ['Comunicação', 'Trabalho em equipe'],
     soft: ['React', 'Vue', 'NestJS'],
   },
+  contact: {
+    email: '',
+    facebook: '',
+    telegram: '',
+    whatsapp: '+5581995510819',
+  },
 };
 
 export default meUser;

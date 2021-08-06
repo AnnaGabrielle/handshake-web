@@ -35,7 +35,7 @@
           </div>
         </div>
 
-        <button class="profile__user-card-contact">
+        <button class="profile__user-card-contact" @click="toggleContactModal()">
           Fale comigo!
         </button>
       </div>
@@ -80,6 +80,10 @@
         </div>
       </div>
     </div>
+
+    <div v-if="showContactModal">
+      <ContactModal :showModal="showContactModal" @onClose="toggleContactModal()" />
+    </div>
   </div>
 </template>
 
@@ -88,18 +92,22 @@ import Vue from 'vue';
 import usersMock from '@/mocks/usersMock';
 import { User } from '@/interfaces';
 import Tag from '@/components/Tag.vue';
+import ContactModal from '@/components/ContactModal.vue';
 
 interface Data {
   user: User | null;
+  showContactModal: boolean;
 }
 
 export default Vue.extend({
   components: {
     Tag,
+    ContactModal,
   },
   data(): Data {
     return {
       user: null,
+      showContactModal: false,
     };
   },
   computed: {
@@ -113,6 +121,10 @@ export default Vue.extend({
   methods: {
     redirectToHome() {
       this.$router.push('/');
+    },
+    toggleContactModal() {
+      this.showContactModal = !this.showContactModal;
+      console.log(this.showContactModal);
     },
   },
 });
