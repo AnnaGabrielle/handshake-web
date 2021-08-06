@@ -130,12 +130,16 @@ text-align: center;
 .page {
     padding-top: 120px;
     margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .form {
   margin-top: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  align-items: center;
 }
 
 .skills {
