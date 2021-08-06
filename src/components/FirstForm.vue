@@ -129,11 +129,12 @@ text-align: center;
 
 .page {
     padding-top: 120px;
+    margin-right: 10px;
 }
 .form {
   margin-top: 10px;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: space-around;
 }
 
@@ -159,7 +160,10 @@ text-align: center;
 }
 
 .content-box {
-  width: 700px;
+  width: 90%;
+  padding: 30px;
   margin-bottom: 50px;
+  background: #fff;
+  box-shadow: 0 0 11px 1px lightgray;
 }
 </style>
