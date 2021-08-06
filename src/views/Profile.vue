@@ -35,7 +35,7 @@
           </div>
         </div>
 
-        <div class="btns">
+        <div v-if="!isMeProfile" class="btns">
           <button class="profile__user-card-contact" @click="toggleModal('contact')">
             Fale comigo!
           </button>
@@ -104,6 +104,7 @@ interface Data {
   profileUser: User | null;
   showContactModal: boolean;
   modalType: string;
+  isMeProfile: boolean;
 }
 
 export default Vue.extend({
@@ -116,15 +117,20 @@ export default Vue.extend({
       profileUser: null,
       showContactModal: false,
       modalType: 'contact',
+      isMeProfile: false,
     };
   },
   computed: {
+    currentUser(): User {
+      return this.$store.getters.currentUser;
+    },
     profileUserId(): number {
       return Number(this.$route.params.id);
     },
   },
   mounted() {
     this.profileUser = usersMock.find((u) => u.id === this.profileUserId) || null;
+    this.isMeProfile = this.profileUserId === this.currentUser?.id;
   },
   methods: {
     redirectToHome() {
