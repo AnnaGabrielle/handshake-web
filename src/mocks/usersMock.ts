@@ -264,7 +264,7 @@ export default [
     lastName: 'Mendes',
     bio: '',
     photo: '../assets/images/fake-profile-2.jpg',
-    currentJob: 'Tech Lead',
+    currentJob: 'Desenvolvedor Júnior',
     currentCompany: 'Descomplica',
     knowledges: [
       'Otimização',
@@ -289,7 +289,7 @@ export default [
     lastName: 'Juu',
     bio: '',
     photo: '../assets/images/fake-profile-2.jpg',
-    currentJob: 'Tech Lead',
+    currentJob: 'Desenvolvedor Júnior',
     currentCompany: 'Descomplica',
     knowledges: [
       'Otimização',
@@ -338,7 +338,7 @@ export default [
     bio: '',
     photo: '../assets/images/fake-profile-2.jpg',
     currentJob: 'Tech Lead',
-    currentCompany: 'Descomplica',
+    currentCompany: 'PaperX',
     knowledges: [
       'Otimização',
       'Qualidade de Software'],
@@ -454,7 +454,7 @@ export default [
     bio: '',
     photo: '../assets/images/fake-profile-2.jpg',
     currentJob: 'Tech Lead',
-    currentCompany: 'Descomplica',
+    currentCompany: 'PaperX',
     knowledges: [
       'Otimização',
       'Qualidade de Software'],
@@ -499,7 +499,7 @@ export default [
     bio: '',
     photo: '../assets/images/fake-profile-2.jpg',
     currentJob: 'Tech Lead',
-    currentCompany: 'Descomplica',
+    currentCompany: 'PaperX',
     knowledges: [
       'Qualidade de Software'],
     interests: ['Design'],
@@ -541,7 +541,7 @@ export default [
     lastName: 'B',
     bio: '',
     photo: '../assets/images/fake-profile-2.jpg',
-    currentJob: 'Tech Lead',
+    currentJob: 'Desenvolvedor Júnior',
     currentCompany: 'Descomplica',
     knowledges: [
       'Otimização',
@@ -589,7 +589,7 @@ export default [
     bio: '',
     photo: '../assets/images/fake-profile-2.jpg',
     currentJob: 'Tech Lead',
-    currentCompany: 'Descomplica',
+    currentCompany: 'PaperX',
     knowledges: ['Desenvolvimento web',
       'Desenvolvimento mobile'],
     interests: ['Design'],
@@ -633,7 +633,7 @@ export default [
     lastName: 'Otavio',
     bio: '',
     photo: '../assets/images/fake-profile-2.jpg',
-    currentJob: 'Tech Lead',
+    currentJob: 'Desenvolvedor Júnior',
     currentCompany: 'Descomplica',
     knowledges: [
       'Otimização',
