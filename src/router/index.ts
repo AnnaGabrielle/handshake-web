@@ -2,6 +2,7 @@ import Vue from 'vue';
 import VueRouter, { RouteConfig } from 'vue-router';
 import Home from '../views/Home.vue';
 import Profile from '../views/Profile.vue';
+import Forms from '../views/Forms.vue';
 
 Vue.use(VueRouter);
 
@@ -15,6 +16,11 @@ const routes: Array<RouteConfig> = [
     path: '/perfil/:id',
     name: 'Profile',
     component: Profile,
+  },
+  {
+    path: '/cadastro',
+    name: 'Forms',
+    component: Forms,
   },
 ];
 

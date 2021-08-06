@@ -1,5 +1,8 @@
 <template>
     <div class="page">
+      <button class="forward-btn" @click="saveFormOne()">
+        <md-icon class="icon">arrow_forward_ios</md-icon>
+      </button>
       <h3> Me conta um pouquinho sobre você? </h3>
       <div class="form">
       <div class="content-box">
@@ -72,19 +75,21 @@ import {
   hardSkills, softSkills, interestedArea, knownArea,
 } from '@/mocks/skillsMock';
 
+interface UserInfomation {
+  selectedHardSkills: Array<string>;
+  selectedSoftSkills: Array<string>;
+  selectedInterestedArea: Array<string>;
+  selectedKnownArea: Array<string>;
+}
+
 export default Vue.extend({
   props: {
-    selectedHardSkills: {
-      type: Array,
+    userInfo: {
+      type: Object as Vue.PropType<UserInfomation>,
     },
-    selectedSoftSkills: {
-      type: Array,
-    },
-    selectedInterestedArea: {
-      type: Array,
-    },
-    selectedKnownArea: {
-      type: Array,
+    saveFirstForm: {
+      type: Boolean,
+      default: false,
     },
   },
   computed: {},
@@ -94,10 +99,11 @@ export default Vue.extend({
       softSkills,
       interestedArea,
       knownArea,
-      softSkillsCurrent: this.selectedSoftSkills || [],
-      hardSkillsCurrent: this.selectedHardSkills || [],
-      interestedAreaCurrent: this.selectedInterestedArea || [],
-      knownAreaCurrent: this.selectedKnownArea || [],
+      softSkillsCurrent: this.userInfo?.selectedSoftSkills || [],
+      hardSkillsCurrent: this.userInfo?.selectedHardSkills || [],
+      interestedAreaCurrent: this.userInfo?.selectedInterestedArea || [],
+      knownAreaCurrent: this.userInfo?.selectedKnownArea || [],
+      savedForm: this.saveFirstForm,
     };
   },
   methods: {
@@ -110,6 +116,10 @@ export default Vue.extend({
     },
     skillIsSelected(skill: string, variable: any) {
       return variable.includes(skill);
+    },
+    saveFormOne() {
+      console.log('salvei');
+      this.$emit('firstFormSaved');
     },
   },
 });
@@ -170,4 +180,22 @@ text-align: center;
   background: #fff;
   box-shadow: 0 0 11px 1px lightgray;
 }
+
+.forward-btn {
+    position: fixed;
+    top: 100px;
+    right: 30px;
+    background: white;
+    border-radius: 50%;
+    border: 1px solid black;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .icon {
+      color: black;
+    }
+  }
 </style>
