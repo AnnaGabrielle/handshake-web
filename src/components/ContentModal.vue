@@ -12,7 +12,7 @@
           <div class="message">
             <div class="img" />
             <div class="message-content">
-              <ModalContactContent v-if="contentType === 'contact'" />
+              <ModalContactContent :profileUser="profileUser" v-if="contentType === 'contact'" />
               <ModalRatingContent v-if="contentType === 'rating'" />
             </div>
           </div>
@@ -38,6 +38,10 @@ export default Vue.extend({
     contentType: {
       type: String,
       default: 'contact',
+    },
+    profileUser: {
+      type: Object as Vue.PropType<User>,
+      required: true,
     },
   },
   computed: {

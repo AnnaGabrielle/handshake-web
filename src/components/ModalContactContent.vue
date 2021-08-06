@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <p>
-      Fulano pode ser contatado a partir dos seguintes meios.
+      {{ profileUser.firstName }} pode ser contatado(a) a partir dos seguintes meios.
       Escolha um disponível e boa conversa! Handshake! :)
     </p>
     <div class="btns">
@@ -22,6 +22,9 @@ import { User } from '@/interfaces';
 import Vue from 'vue';
 
 export default Vue.extend({
+  props: {
+    profileUser: Object as Vue.PropType<User>,
+  },
   computed: {
     currentUser(): User {
       return this.$store.getters.currentUser;

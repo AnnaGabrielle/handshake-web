@@ -120,7 +120,7 @@ export default Vue.extend({
 
   .input-bar {
     position: relative;
-    width: 1100px;
+    width: 800px;
 
     .search-icon {
       position: absolute;

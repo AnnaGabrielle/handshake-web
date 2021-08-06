@@ -12,14 +12,14 @@
           <span
             class="profile__user-card-info-name"
           >
-            {{ user.firstName }} {{ user.lastName }}
+            {{ profileUser.firstName }} {{ profileUser.lastName }}
           </span>
-          <span>{{ user.currentJob }}</span>
+          <span>{{ profileUser.currentJob }}</span>
 
           <div class="tags">Interesses:
             <Tag
               class="profile__user-card__info-interests"
-              v-for="(interest, index) in user.interests"
+              v-for="(interest, index) in profileUser.interests"
               :key="index"
               :text="interest"
             />
@@ -28,7 +28,7 @@
           <div class="tags">Áreas de conhecimento:
             <Tag
               class="profile__user-card__info-interests"
-              v-for="(knowledge, index) in user.knowledges"
+              v-for="(knowledge, index) in profileUser.knowledges"
               :key="index"
               :text="knowledge"
             />
@@ -46,15 +46,11 @@
       </div>
     </div>
 
-    <div class="profile__section">
+    <div v-if="profileUser.bio" class="profile__section">
       <span>Quem sou eu</span>
 
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        Dignissimos delectus sed molestias itaque.
-        Eius cum consequatur nisi! Ex culpa voluptates ducimus,
-        dignissimos animi provident minus similique
-        quasi dolor corrupti tempore?
+        {{ profileUser.bio }}
       </p>
     </div>
 
@@ -66,7 +62,7 @@
 
         <div class="tags-list">
           <Tag
-            v-for="(knowledge, index) in user.skills.soft"
+            v-for="(knowledge, index) in profileUser.skills.soft"
             :key="index"
             :text="knowledge"
           />
@@ -78,7 +74,7 @@
 
         <div class="tags-list">
           <Tag
-            v-for="(knowledge, index) in user.skills.hard"
+            v-for="(knowledge, index) in profileUser.skills.hard"
             :key="index"
             :text="knowledge"
           />
@@ -90,6 +86,7 @@
       <ContentModal
         :contentType="modalType"
         :showModal="showContactModal"
+        :profileUser="profileUser"
         @onClose="toggleModal()"
       />
     </div>
@@ -104,7 +101,7 @@ import Tag from '@/components/Tag.vue';
 import ContentModal from '@/components/ContentModal.vue';
 
 interface Data {
-  user: User | null;
+  profileUser: User | null;
   showContactModal: boolean;
   modalType: string;
 }
@@ -116,7 +113,7 @@ export default Vue.extend({
   },
   data(): Data {
     return {
-      user: null,
+      profileUser: null,
       showContactModal: false,
       modalType: 'contact',
     };
@@ -127,7 +124,7 @@ export default Vue.extend({
     },
   },
   mounted() {
-    this.user = usersMock.find((u) => u.id === this.profileUserId) || null;
+    this.profileUser = usersMock.find((u) => u.id === this.profileUserId) || null;
   },
   methods: {
     redirectToHome() {
