@@ -1,7 +1,7 @@
 <template>
   <div id="page">
     <div>
-      <FirstForm @firstFormSaved="saveInfo"/>
+      <FirstForm @firstFormSaved="saveInfo" :userInfo="userInfo"/>
     </div>
   </div>
 </template>
@@ -9,6 +9,14 @@
 <script lang="ts">
 import Vue from 'vue';
 import FirstForm from '@/components/FirstForm.vue';
+import { User } from '@/interfaces';
+
+interface UserInfomation {
+  selectedHardSkills: Array<string>;
+  selectedSoftSkills: Array<string>;
+  selectedInterestedArea: Array<string>;
+  selectedKnownArea: Array<string>;
+}
 
 export default Vue.extend({
   components: {
@@ -21,10 +29,23 @@ export default Vue.extend({
       saveSecondForm: false,
     };
   },
+  computed: {
+    currentUser(): User {
+      return this.$store.getters.currentUser;
+    },
+    userInfo(): UserInfomation {
+      return {
+        selectedHardSkills: this.currentUser?.skills.hard || [],
+        selectedSoftSkills: this.currentUser?.skills.soft || [],
+        selectedInterestedArea: this.currentUser?.interests || [],
+        selectedKnownArea: this.currentUser?.knowledges || [],
+      };
+    },
+  },
   methods: {
     saveInfo() {
       this.saveSecondForm = true;
-      this.$router.push('/');
+      this.$router.push('/inicio');
     },
   },
 });

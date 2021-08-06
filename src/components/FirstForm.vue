@@ -74,6 +74,7 @@ import Vue from 'vue';
 import {
   hardSkills, softSkills, interestedArea, knownArea,
 } from '@/mocks/skillsMock';
+import meUser from '@/mocks/me-mock';
 
 interface UserInfomation {
   selectedHardSkills: Array<string>;
@@ -118,7 +119,11 @@ export default Vue.extend({
       return variable.includes(skill);
     },
     saveFormOne() {
-      console.log('salvei');
+      meUser.interests = this.interestedAreaCurrent;
+      meUser.knowledges = this.knownAreaCurrent;
+      meUser.skills.hard = this.hardSkillsCurrent;
+      meUser.skills.soft = this.softSkillsCurrent;
+
       this.$emit('firstFormSaved');
     },
   },

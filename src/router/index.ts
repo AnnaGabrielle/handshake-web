@@ -9,6 +9,12 @@ Vue.use(VueRouter);
 const routes: Array<RouteConfig> = [
   {
     path: '/',
+    redirect: '/cadastro',
+    name: 'Forms',
+    component: Forms,
+  },
+  {
+    path: '/inicio',
     name: 'Home',
     component: Home,
   },

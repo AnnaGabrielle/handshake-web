@@ -39,7 +39,7 @@ export default Vue.extend({
       this.$router.push(`/perfil/${this.currentUser.id}`);
     },
     goToHome() {
-      this.$router.push('/');
+      this.$router.push('/inicio');
     },
   },
 });
