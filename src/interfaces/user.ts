@@ -1,6 +1,7 @@
 export interface User {
   id: number;
   currentJob: string;
+  currentCompany?: string;
   firstName: string;
   lastName: string;
   bio?: string;
