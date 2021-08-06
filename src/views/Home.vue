@@ -21,7 +21,7 @@ import usersMock from '@/mocks/usersMock';
 import { User } from '@/interfaces';
 import axios from 'axios';
 
-const DEFAULT_TOKEN = '';
+const DEFAULT_TOKEN = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjI4MjMxMjU2LCJleHAiOjE2MzA4MjMyNTZ9.LGF8WdUoS2IW8ofyWeL9u0TB3-acCoYd5HoVOmGHGpg';
 const HANDSHAKE_API_ENDPOINT = 'https://handshake-hackathon-api.herokuapp.com/users';
 
 const getUsers = async () => {
@@ -123,7 +123,7 @@ input {
   margin-bottom: 10px;
   padding: 20px;
   outline: none;
-  font-size: 24px;
+  font-size: 18px;
   font-family: 'AprovaSans', sans-serif;
 }
 input:focus {

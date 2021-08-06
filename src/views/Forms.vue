@@ -1,13 +1,7 @@
 <template>
   <div id="page">
-    <div v-if="!nextPage">
-      <FirstForm @firstFormSaved="togglePages"/>
-    </div>
-    <div v-else>
-      <button class="back-btn" @click="togglePages()">
-      <md-icon class="icon">arrow_back_ios_new</md-icon>
-    </button>
-      <SecondForm @secondFormSaved="saveInfo"/>
+    <div>
+      <FirstForm @firstFormSaved="saveInfo"/>
     </div>
   </div>
 </template>
@@ -15,12 +9,10 @@
 <script lang="ts">
 import Vue from 'vue';
 import FirstForm from '@/components/FirstForm.vue';
-import SecondForm from '@/components/icons/SecondForm.vue';
 
 export default Vue.extend({
   components: {
     FirstForm,
-    SecondForm,
   },
   data() {
     return {
@@ -30,10 +22,6 @@ export default Vue.extend({
     };
   },
   methods: {
-    togglePages() {
-      this.nextPage = !this.nextPage;
-      this.saveFirstForm = !this.saveFirstForm;
-    },
     saveInfo() {
       this.saveSecondForm = true;
       this.$router.push('/');
