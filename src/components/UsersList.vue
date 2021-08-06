@@ -55,7 +55,7 @@ $fontFamily: 'AprovaSans', sans-serif;
 }
 
 .user-card {
-  height: 170px;
+  height: 210px;
   margin-bottom: 15px;
   background: #FFF;
   box-shadow: 0 0 5px 1px lightgray;
@@ -76,6 +76,7 @@ $fontFamily: 'AprovaSans', sans-serif;
   }
 
   &__info {
+    max-width: 50%;
     flex-grow: 1;
     text-align: start;
     font-size: 17px;
@@ -98,8 +99,10 @@ $fontFamily: 'AprovaSans', sans-serif;
     }
 
     .knowledges {
+      width: 70%;
       display: flex;
       align-items: center;
+      flex-wrap: wrap;
 
       span {
         color: blue;
