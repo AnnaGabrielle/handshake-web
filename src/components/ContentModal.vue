@@ -13,7 +13,7 @@
             <div class="img" />
             <div class="message-content">
               <ModalContactContent :profileUser="profileUser" v-if="contentType === 'contact'" />
-              <ModalRatingContent v-if="contentType === 'rating'" />
+              <ModalRatingContent @onClose="$emit('onClose')" v-if="contentType === 'rating'" />
             </div>
           </div>
         </div>

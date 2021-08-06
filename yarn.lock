@@ -5532,13 +5532,6 @@ kind-of@^6.0.0, kind-of@^6.0.2:
   resolved "https://registry.npm.taobao.org/kind-of/download/kind-of-6.0.3.tgz#07c05034a6c349fa06e24fa35aa76db4580ce4dd"
   integrity sha1-B8BQNKbDSfoG4k+jWqdttFgM5N0=
 
-lamejs@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/lamejs/-/lamejs-1.2.0.tgz#0259f83db4666141a7b671b8caa6369d95177d08"
-  integrity sha1-Aln4PbRmYUGntnG4yqY2nZUXfQg=
-  dependencies:
-    use-strict "1.0.1"
-
 launch-editor-middleware@^2.2.1:
   version "2.2.1"
   resolved "https://registry.npm.taobao.org/launch-editor-middleware/download/launch-editor-middleware-2.2.1.tgz#e14b07e6c7154b0a4b86a0fd345784e45804c157"
@@ -5566,11 +5559,6 @@ lines-and-columns@^1.1.6:
   version "1.1.6"
   resolved "https://registry.npm.taobao.org/lines-and-columns/download/lines-and-columns-1.1.6.tgz#1c00c743b433cd0a4e80758f7b64a57440d9ff00"
   integrity sha1-HADHQ7QzzQpOgHWPe2SldEDZ/wA=
-
-linkifyjs@^2.1.9:
-  version "2.1.9"
-  resolved "https://registry.yarnpkg.com/linkifyjs/-/linkifyjs-2.1.9.tgz#af06e45a2866ff06c4766582590d098a4d584702"
-  integrity sha512-74ivurkK6WHvHFozVaGtQWV38FzBwSTGNmJolEgFp7QgR2bl6ArUWlvT4GcHKbPe1z3nWYi+VUdDZk16zDOVug==
 
 load-json-file@^4.0.0:
   version "4.0.0"
@@ -8287,6 +8275,11 @@ svgo@^1.0.0:
     unquote "~1.1.1"
     util.promisify "~1.0.0"
 
+sweetalert2@^11.1.2:
+  version "11.1.2"
+  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-11.1.2.tgz#268deb981fd2476f4e9dc1085497e771ba1b55a8"
+  integrity sha512-HWPsMlCvA+rJEn7BJH0ovTPr6S5YkxViIgK1YrA2Z3Y5Ghkfk7IOprgmYNi44HWIqN/xoXE73rG9+qG/MgD6Sw==
+
 table@^5.2.3:
   version "5.4.6"
   resolved "https://registry.nlark.com/table/download/table-5.4.6.tgz#1292d19500ce3f86053b05f0e8e7e4a3bb21079e"
@@ -8731,11 +8724,6 @@ url@^0.11.0:
     punycode "1.3.2"
     querystring "0.2.0"
 
-use-strict@1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/use-strict/-/use-strict-1.0.1.tgz#0bb80d94f49a4a05192b84a8c7d34e95f1a7e3a0"
-  integrity sha1-C7gNlPSaSgUZK4Sox9NOlfGn46A=
-
 use@^3.1.0:
   version "3.1.1"
   resolved "https://registry.npm.taobao.org/use/download/use-3.1.1.tgz#d50c8cac79a19fbc20f2911f56eb973f4e10070f"
@@ -8793,11 +8781,6 @@ uuid@^3.3.2, uuid@^3.4.0:
   resolved "https://registry.nlark.com/uuid/download/uuid-3.4.0.tgz#b23e4358afa8a202fe7a100af1f5f883f02007ee"
   integrity sha1-sj5DWK+oogL+ehAK8fX4g/AgB+4=
 
-v-click-outside@^3.1.2:
-  version "3.1.2"
-  resolved "https://registry.yarnpkg.com/v-click-outside/-/v-click-outside-3.1.2.tgz#1dbaa14bf09a21bd16f23a38f03bfa3988f71281"
-  integrity sha512-gMdRqfRE6m6XU6SiFi3dyBlFB2MWogiXpof8Aa3LQysrl9pzTndqp/iEaAphLoadaQUFnQ0ec6fLLaxr7LiY6A==
-
 v8-compile-cache@^2.0.3:
   version "2.3.0"
   resolved "https://registry.npm.taobao.org/v8-compile-cache/download/v8-compile-cache-2.3.0.tgz?cache=0&sync_timestamp=1614993892777&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fv8-compile-cache%2Fdownload%2Fv8-compile-cache-2.3.0.tgz#2de19618c66dc247dcfb6f99338035d8245a2cee"
@@ -8835,23 +8818,6 @@ vm-browserify@^1.0.1:
   resolved "https://registry.npm.taobao.org/vm-browserify/download/vm-browserify-1.1.2.tgz#78641c488b8e6ca91a75f511e7a3b32a86e5dda0"
   integrity sha1-eGQcSIuObKkadfUR56OzKobl3aA=
 
-vue-advanced-chat@^0.9.0:
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/vue-advanced-chat/-/vue-advanced-chat-0.9.0.tgz#529558a9b051f27b1281ba436137c0e25cbf75f0"
-  integrity sha512-Zg0rXpQQjOV/gLS/0CPUo/JetwkYj6kS45VZ6cX8ntJqSjC92sgcDD381lLl8cCTPSbpeq7gqgcY9hn21MU7xg==
-  dependencies:
-    linkifyjs "^2.1.9"
-    v-click-outside "^3.1.2"
-    vue-emoji-picker "^1.0.1"
-    vue-infinite-loading "https://github.com/antoine92190/vue-infinite-loading/tarball/master"
-  optionalDependencies:
-    lamejs "^1.2.0"
-
-vue-emoji-picker@^1.0.1:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/vue-emoji-picker/-/vue-emoji-picker-1.0.3.tgz#168604163e41b3a2a0f9e9a21bb595fd8bac05e4"
-  integrity sha512-t1UyrvPHKgWzj8maqNvMIHfY4B2Hn+filKTiy4ik+xweF0gKMx1r9C0YDg1zgaYnB6PBjctHwr9vwkipb4lUaw==
-
 vue-eslint-parser@^7.0.0:
   version "7.10.0"
   resolved "https://registry.nlark.com/vue-eslint-parser/download/vue-eslint-parser-7.10.0.tgz#ea4e4b10fd10aa35c8a79ac783488d8abcd29be8"
@@ -8885,10 +8851,6 @@ vue-hot-reload-api@^2.3.0:
   version "2.3.4"
   resolved "https://registry.npm.taobao.org/vue-hot-reload-api/download/vue-hot-reload-api-2.3.4.tgz#532955cc1eb208a3d990b3a9f9a70574657e08f2"
   integrity sha1-UylVzB6yCKPZkLOp+acFdGV+CPI=
-
-"vue-infinite-loading@https://github.com/antoine92190/vue-infinite-loading/tarball/master":
-  version "2.4.5"
-  resolved "https://github.com/antoine92190/vue-infinite-loading/tarball/master#064f4f302a586407685b6ca80f955543781d9aa7"
 
 "vue-loader-v16@npm:vue-loader@^16.1.0":
   version "16.4.1"
