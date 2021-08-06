@@ -129,8 +129,12 @@ export default Vue.extend({
     },
   },
   mounted() {
-    this.profileUser = usersMock.find((u) => u.id === this.profileUserId) || null;
     this.isMeProfile = this.profileUserId === this.currentUser?.id;
+    if (this.isMeProfile) {
+      this.profileUser = this.currentUser;
+    } else {
+      this.profileUser = usersMock.find((u) => u.id === this.profileUserId) || null;
+    }
   },
   methods: {
     redirectToHome() {
