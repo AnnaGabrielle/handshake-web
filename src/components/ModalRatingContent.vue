@@ -14,7 +14,7 @@
         <md-textarea md-autogrow maxlength="80" class="textarea" />
       </md-field>
 
-      <button>Finalizar</button>
+      <button @click="sendRating()">Finalizar</button>
     </div>
   </div>
 </template>
@@ -23,6 +23,7 @@
 import Vue from 'vue';
 import StarRating from 'vue-star-rating';
 import { User } from '@/interfaces';
+import Swal from 'sweetalert2';
 
 interface Data {
   rate: number;
@@ -41,6 +42,25 @@ export default Vue.extend({
     return {
       rate: 0,
     };
+  },
+  methods: {
+    sendRating() {
+      this.$emit('onClose');
+
+      Swal.fire({
+        title: '<span style="font-family: \'AprovaSans\';">Avaliação enviada</span>',
+        position: 'bottom-end',
+        icon: 'success',
+        toast: true,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer);
+          toast.addEventListener('mouseleave', Swal.resumeTimer);
+        },
+        showConfirmButton: false,
+      });
+    },
   },
 });
 </script>
