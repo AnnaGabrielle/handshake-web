@@ -77,6 +77,11 @@ h5 {
   font-weight: bold;
   margin-left: 8px;
   letter-spacing: -1px;
+
+  &:hover {
+    color: rgb(104, 104, 104);
+    transition: all 200ms linear;
+  }
 }
 
 .profile {
