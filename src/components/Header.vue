@@ -4,7 +4,11 @@
         <img src="../assets/images/descologo.svg" alt="">
         <h5>Handshake</h5>
       </div>
-
+      <div class="menu">
+         <h4 @click="goToHome()"> Inicio </h4>
+        <h4 @click="goToForm()"> Seus Interesses/Skills </h4>
+        <h4 @click="goToMyProfile()"> Perfil </h4>
+      </div>
       <div v-if="!isSignUpRoute" class="profile" @click="goToProfile()">
         <md-avatar class="md-avatar-icon md-primary">
           <img v-if="currentUser.photo" :src="currentUser.photo" alt="People">
@@ -42,8 +46,14 @@ export default Vue.extend({
     goToProfile() {
       this.$router.push(`/perfil/${this.currentUser.id}`);
     },
+    goToMyProfile() {
+      this.$router.push(`/perfil/${this.currentUser.id}`);
+    },
     goToHome() {
       this.$router.push('/inicio');
+    },
+    goToForm() {
+      this.$router.push('/');
     },
   },
 });
@@ -82,6 +92,24 @@ h5 {
   font-weight: bold;
   margin-left: 8px;
   letter-spacing: -1px;
+
+  &:hover {
+    color: rgb(104, 104, 104);
+    transition: all 200ms linear;
+  }
+}
+
+.menu {
+  display: flex;
+}
+
+h4 {
+  color: #999;
+  font-size: 16px;
+  font-weight: bold;
+  margin-left: 22px;
+  letter-spacing: -1px;
+  cursor: pointer;
 
   &:hover {
     color: rgb(104, 104, 104);
