@@ -80,7 +80,7 @@ export default Vue.extend({
 input {
   width: 50%;
   height: 48px;
-  border: 1px solid #999;
+  box-shadow: 0 0 9px 1px lightgray;
   border-radius: 10px;
   margin-bottom: 10px;
   padding: 20px;

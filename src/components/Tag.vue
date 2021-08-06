@@ -22,7 +22,7 @@ export default Vue.extend({
   width: fit-content;
   padding: 2px 6px;
   height: 25px;
-  background-color: #65FF90;
+  background-color: #fce0b6;
   display: flex !important;
   justify-content: center;
   align-items: center;

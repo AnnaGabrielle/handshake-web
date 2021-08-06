@@ -151,7 +151,8 @@ $fontFamily: 'AprovaSans', sans-serif;
     &-card {
       height: 255px;
       margin-bottom: 15px;
-      background: #C4C4C4;
+      background: #fff;
+      box-shadow: 0 0 11px 1px lightgray;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -196,14 +197,19 @@ $fontFamily: 'AprovaSans', sans-serif;
       }
 
       &-contact {
-        background: #65FF90;
         width: 180px;
         height: 45px;
         font-family: $fontFamily;
         font-size: 18px;
         margin: 0 25px;
-        border-radius: 10px;
-        border: 1px solid black;
+        border-radius: 32px;
+        background: #65ff90;
+
+        &:hover {
+          background: #4cec7a;
+          color: #000;
+          transition: all 80ms linear;
+        }
       }
     }
   }
@@ -220,6 +226,8 @@ $fontFamily: 'AprovaSans', sans-serif;
     letter-spacing: -1px;
     display: flex;
     flex-direction: column;
+    background: #fff;
+    box-shadow: 0 0 11px 1px lightgray;
 
     p {
       font-weight: 400;

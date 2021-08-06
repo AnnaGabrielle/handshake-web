@@ -88,4 +88,7 @@ button {
   outline: none;
   cursor: pointer;
 }
+input {
+  border: none;
+}
 </style>

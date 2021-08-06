@@ -58,17 +58,12 @@ $fontFamily: 'AprovaSans', sans-serif;
   height: 170px;
   margin-bottom: 15px;
   background: #FFF;
+  box-shadow: 0 0 5px 1px lightgray;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 8px;
   cursor: pointer;
-  border: 1px solid #B0B0B0;
-
-  &:hover {
-    border-color: black;
-    transition: border 600ms linear;
-  }
 
   &__image {
     width: 125px;
@@ -119,8 +114,13 @@ $fontFamily: 'AprovaSans', sans-serif;
     font-family: $fontFamily;
     font-size: 18px;
     margin: 0 25px;
-    border-radius: 10px;
-    border: 1px solid black;
+    border-radius: 32px;
+
+    &:hover {
+      background: #4cec7a;
+      color: #000;
+      transition: all 80ms linear;
+    }
   }
 }
 </style>
