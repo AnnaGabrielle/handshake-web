@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <div class="input-area">
-        <input v-model="userSearch" class="input" type="text"/>
+        <input v-model="userSearch" class="input" type="text" placeholder="Encontre suas conexões"/>
     </div>
     <div class="list-container">
       <UsersList :users="usersFiltered" />
@@ -47,15 +47,25 @@ export default Vue.extend({
       }, []);
       return allUsers;
     },
-    searchEachFild(id: number) {
+    searchEachFild(id: number): boolean {
       const user = this.users.find((userFind) => userFind.id === id);
-      if (!user) return;
-      const foundField = (Object.values(user)).find((field) => {
+      if (!user) return false;
+      const wordArray = this.userSearch.split(/\s+/);
+      if (wordArray.length === 1) {
+        const foundField = (Object.values(user)).find((field) => {
+          const processedField = this.processString(field.toString());
+          return processedField.includes(this.processString(this.userSearch));
+        });
+        return foundField;
+      }
+      const foundField = wordArray.filter((word) => (Object.values(user)).find((field) => {
         const processedField = this.processString(field.toString());
-        return processedField.includes(this.processString(this.userSearch));
-      });
-      // eslint-disable-next-line consistent-return
-      return foundField;
+        return processedField.includes(this.processString(word));
+      }));
+      if (foundField.length === wordArray.length) {
+        return true;
+      }
+      return false;
     },
     processString(item: string) {
       return item
@@ -78,13 +88,14 @@ export default Vue.extend({
 }
 
 input {
-  width: 50%;
+  width: 70%;
   height: 48px;
   box-shadow: 0 0 9px 1px lightgray;
   border-radius: 10px;
   margin-bottom: 10px;
   padding: 20px;
   outline: none;
+  font-size: 24px;
 }
 input:focus {
   border: 1px solid #666;
