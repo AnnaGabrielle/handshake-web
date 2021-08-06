@@ -64,6 +64,9 @@ export default Vue.extend({
     await getUsers();
   },
   computed: {
+    currentUser(): User {
+      return this.$store.getters.currentUser;
+    },
     usersFiltered(): User[] {
       return this.searchUser();
     },
@@ -77,7 +80,15 @@ export default Vue.extend({
         usersFounded.push(user);
         return usersFounded;
       }, []);
-      return allUsers;
+      return allUsers
+        .reduce((acc: User[], u: User) => {
+          this.currentUser.interests.forEach((i) => {
+            if (u.knowledges.includes(i)) {
+              acc.push(u);
+            }
+          });
+          return acc;
+        }, []);
     },
     searchEachFild(id: number): boolean {
       const user = this.users.find((userFind) => userFind.id === id);
