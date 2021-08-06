@@ -2,6 +2,8 @@
   <div id="app">
     <Header />
     <router-view/>
+
+    <portal-target name="connection-modal" />
   </div>
 </template>
 
@@ -13,8 +15,8 @@ export default Vue.extend({
   components: {
     Header,
   },
-  mounted() {
-    document.title = 'Descomplica | Networking';
+  async mounted() {
+    await this.$store.dispatch('GET_LOGGED_USER');
   },
 });
 </script>

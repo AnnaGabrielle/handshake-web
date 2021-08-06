@@ -35,7 +35,7 @@
           </div>
         </div>
 
-        <button class="profile__user-card-contact">
+        <button class="profile__user-card-contact" @click="toggleContactModal()">
           Fale comigo!
         </button>
       </div>
@@ -80,6 +80,14 @@
         </div>
       </div>
     </div>
+
+    <div v-if="showContactModal">
+      <ContentModal
+        :contentType="'rating'"
+        :showModal="showContactModal"
+        @onClose="toggleContactModal()"
+      />
+    </div>
   </div>
 </template>
 
@@ -88,18 +96,24 @@ import Vue from 'vue';
 import usersMock from '@/mocks/usersMock';
 import { User } from '@/interfaces';
 import Tag from '@/components/Tag.vue';
+import ContentModal from '@/components/ContentModal.vue';
 
 interface Data {
   user: User | null;
+  showContactModal: boolean;
+  modalType: string;
 }
 
 export default Vue.extend({
   components: {
     Tag,
+    ContentModal,
   },
   data(): Data {
     return {
       user: null,
+      showContactModal: false,
+      modalType: 'contact',
     };
   },
   computed: {
@@ -113,6 +127,10 @@ export default Vue.extend({
   methods: {
     redirectToHome() {
       this.$router.push('/');
+    },
+    toggleContactModal() {
+      this.modalType = 'contact';
+      this.showContactModal = !this.showContactModal;
     },
   },
 });
