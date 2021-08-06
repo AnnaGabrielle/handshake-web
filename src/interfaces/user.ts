@@ -9,5 +9,5 @@ export interface User {
   skills: {
     soft: string[];
     hard: string[];
-  }
+  };
 }

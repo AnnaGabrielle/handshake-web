@@ -19,6 +19,26 @@ import Vue from 'vue';
 import UsersList from '@/components/UsersList.vue';
 import usersMock from '@/mocks/usersMock';
 import { User } from '@/interfaces';
+import axios from 'axios';
+
+const DEFAULT_TOKEN = '';
+const HANDSHAKE_API_ENDPOINT = 'https://handshake-hackathon-api.herokuapp.com/users';
+
+const getUsers = async () => {
+  axios.interceptors.request.use((config) => {
+    const headers = {
+      ...config.headers,
+      Authorization: DEFAULT_TOKEN,
+    };
+    return {
+      ...config,
+      headers,
+    };
+  });
+
+  const response = await axios.get(HANDSHAKE_API_ENDPOINT);
+  return response?.data;
+};
 
 interface Data {
   users: User[];
@@ -35,6 +55,9 @@ export default Vue.extend({
       users: usersMock,
       userSearch: '',
     };
+  },
+  async created() {
+    await getUsers();
   },
   computed: {
     usersFiltered(): User[] {
