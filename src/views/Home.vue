@@ -1,7 +1,12 @@
 <template>
   <div class="home">
     <div class="input-area">
-        <input v-model="userSearch" class="input" type="text" placeholder="Encontre suas conexões"/>
+        <input
+          v-model="userSearch"
+          class="input"
+          type="text"
+          placeholder="Encontre suas conexões"
+        />
     </div>
     <div class="list-container">
       <UsersList :users="usersFiltered" />
@@ -96,6 +101,7 @@ input {
   padding: 20px;
   outline: none;
   font-size: 24px;
+  font-family: 'AprovaSans', sans-serif;
 }
 input:focus {
   border: 1px solid #666;
