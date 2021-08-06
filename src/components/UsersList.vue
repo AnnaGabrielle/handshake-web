@@ -75,7 +75,9 @@ $fontFamily: 'AprovaSans', sans-serif;
     width: 125px;
     height: 125px;
     border-radius: 50%;
-    background: white;
+    background-image: url('../assets/images/fake-profile-2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
     margin: 0 50px 0 25px;
   }
 
