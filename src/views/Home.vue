@@ -12,7 +12,8 @@
           <md-icon class="search-icon">search</md-icon>
         </div>
     </div>
-    <div class="list-container">
+
+    <div v-if="usersFiltered.length" class="list-container">
       <UsersList :users="usersFiltered" />
     </div>
   </div>
@@ -68,7 +69,22 @@ export default Vue.extend({
       return this.searchUser();
     },
   },
+  mounted() {
+    this.users = this.filterUsersByCurrentUserInterests();
+  },
   methods: {
+    filterUsersByCurrentUserInterests(): User[] {
+      if (this.currentUser.interests.length === 0) return usersMock;
+
+      return this.users.reduce((acc: User[], u: User) => {
+        this.currentUser.interests.forEach((i) => {
+          if (u.knowledges.includes(i)) {
+            acc.push(u);
+          }
+        });
+        return acc;
+      }, []);
+    },
     searchUser() {
       if (this.userSearch === '') return this.users;
       const allUsers = this.users.reduce((usersFounded: User[], user: User) => {
@@ -78,14 +94,7 @@ export default Vue.extend({
         return usersFounded;
       }, []);
 
-      return allUsers.reduce((acc: User[], u: User) => {
-        this.currentUser.interests.forEach((i) => {
-          if (u.knowledges.includes(i)) {
-            acc.push(u);
-          }
-        });
-        return acc;
-      }, []);
+      return allUsers;
     },
     searchEachFild(id: number): boolean {
       const user = this.users.find((userFind) => userFind.id === id);
