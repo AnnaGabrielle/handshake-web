@@ -12,21 +12,24 @@ const hardSkills = [
   'Proficiência em Pesquisa e Análise',
   'Familiaridade com Economia',
   'Conhecimento de Desenvolvimento',
+  'Vue.js',
+  'React',
 ];
 const knownArea = [
-  'Comunicação',
-  'Comunicação Interpessoal',
-  'Organização',
-  'Liderança (gerir pessoas)',
-  'Proatividade',
+  'Desenvolvimento web',
+  'Desenvolvimento mobile',
+  'Banco de dados​​',
+  'Desenvolvimento de Jogos',
+  'Otimização',
+  'Qualidade de Software',
 ];
 const interestedArea = [
-  'Competências de negócios',
-  'Conhecimento de Gestão de Produto',
-  'Habilidades de priorização​​',
-  'Proficiência em Pesquisa e Análise',
-  'Familiaridade com Economia',
-  'Conhecimento de Desenvolvimento',
+  'Desenvolvimento web',
+  'Desenvolvimento mobile',
+  'Banco de dados​​',
+  'Desenvolvimento de Jogos',
+  'Otimização',
+  'Qualidade de Software',
 ];
 
 export {
