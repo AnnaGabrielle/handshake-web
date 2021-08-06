@@ -8,6 +8,10 @@ export default [
     currentJob: 'Software Engineer',
     knowledges: ['produto'],
     interests: ['produto'],
+    skills: {
+      hard: ['React', 'Vue'],
+      soft: ['Comunicação'],
+    },
   },
   {
     id: 2,
@@ -16,6 +20,10 @@ export default [
     currentJob: 'Software Engineer',
     knowledges: ['produto'],
     interests: ['produto'],
+    skills: {
+      hard: ['React', 'Vue'],
+      soft: ['Organização'],
+    },
   },
   {
     id: 3,
@@ -24,6 +32,10 @@ export default [
     currentJob: 'Software Engineer',
     knowledges: ['produto'],
     interests: ['produto'],
+    skills: {
+      hard: ['React', 'Vue'],
+      soft: ['Organização'],
+    },
   },
   {
     id: 4,
@@ -32,6 +44,10 @@ export default [
     currentJob: 'Software Engineer',
     knowledges: ['produto'],
     interests: ['produto'],
+    skills: {
+      hard: ['React', 'Vue'],
+      soft: ['proatividade'],
+    },
   },
   {
     id: 5,
@@ -40,6 +56,10 @@ export default [
     currentJob: 'Software Engineer',
     knowledges: ['produto'],
     interests: ['produto'],
+    skills: {
+      hard: ['React', 'Vue'],
+      soft: ['proatividade'],
+    },
   },
   {
     id: 6,
@@ -48,6 +68,10 @@ export default [
     currentJob: 'Software Engineer',
     knowledges: ['produto'],
     interests: ['produto'],
+    skills: {
+      hard: ['React', 'Vue'],
+      soft: ['proatividade'],
+    },
   },
   {
     id: 7,
@@ -56,6 +80,10 @@ export default [
     currentJob: 'Software Engineer',
     knowledges: ['produto'],
     interests: ['produto'],
+    skills: {
+      hard: ['React', 'Vue'],
+      soft: ['liderança'],
+    },
   },
   {
     id: 8,
@@ -64,6 +92,10 @@ export default [
     currentJob: 'Software Engineer',
     knowledges: ['produto'],
     interests: ['produto'],
+    skills: {
+      hard: ['React', 'Vue'],
+      soft: ['liderança'],
+    },
   },
   {
     id: 9,
@@ -72,5 +104,9 @@ export default [
     currentJob: 'Software Engineer',
     knowledges: ['produto'],
     interests: ['produto'],
+    skills: {
+      hard: ['React', 'Vue'],
+      soft: ['liderança'],
+    },
   },
 ] as User[];

@@ -13,23 +13,21 @@
           <span>{{ user.currentJob }}</span>
 
           <div class="tags">Interesses:
-            <span
+            <Tag
               class="profile__user-card__info-interests"
               v-for="(interest, index) in user.interests"
               :key="index"
-            >
-              {{ interest }}
-            </span>
+              :text="interest"
+            />
           </div>
 
           <div class="tags">Áreas de conhecimento:
-            <span
-              class="profile__user-card__info-knowledges"
+            <Tag
+              class="profile__user-card__info-interests"
               v-for="(knowledge, index) in user.knowledges"
-              :key="2*index"
-            >
-              {{ knowledge }}
-            </span>
+              :key="index"
+              :text="knowledge"
+            />
           </div>
         </div>
       </div>
@@ -49,6 +47,30 @@
 
     <div class="profile__section">
       <span>Skills</span>
+
+      <div class="skills-type">
+        Hard skills
+
+        <div class="tags-list">
+          <Tag
+            v-for="(knowledge, index) in user.skills.soft"
+            :key="index"
+            :text="knowledge"
+          />
+        </div>
+      </div>
+
+      <div class="skills-type">
+        Soft skills
+
+        <div class="tags-list">
+          <Tag
+            v-for="(knowledge, index) in user.skills.hard"
+            :key="index"
+            :text="knowledge"
+          />
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -57,12 +79,16 @@
 import Vue from 'vue';
 import usersMock from '@/mocks/usersMock';
 import { User } from '@/interfaces';
+import Tag from '@/components/Tag.vue';
 
 interface Data {
   user: User | null;
 }
 
 export default Vue.extend({
+  components: {
+    Tag,
+  },
   data(): Data {
     return {
       user: null,
@@ -92,7 +118,7 @@ $fontFamily: 'AprovaSans', sans-serif;
     width: 70%;
 
     &-card {
-      height: 325px;
+      height: 255px;
       margin-bottom: 15px;
       background: #C4C4C4;
       display: flex;
@@ -101,11 +127,13 @@ $fontFamily: 'AprovaSans', sans-serif;
       border-radius: 8px;
 
       &-image {
-        width: 200px;
-        height: 200px;
+        width: 175px;
+        height: 175px;
         border-radius: 50%;
-        background: white;
         margin: 0 50px 0 25px;
+        background-image: url('../assets/images/fake-profile-2.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
       }
 
       &-info {
@@ -148,12 +176,30 @@ $fontFamily: 'AprovaSans', sans-serif;
     font-weight: 700;
     font-size: 28px;
     letter-spacing: -1px;
+    display: flex;
+    flex-direction: column;
 
     p {
       font-weight: 400;
       font-size: 17px;
       margin-top: 18px;
       line-height: 26px;
+    }
+
+    .skills-type {
+      font-size: 22px;
+      font-style: italic;
+      margin-top: 18px;
+
+      .tags-list {
+        display: flex;
+      }
+
+      .tag {
+        font-style: initial;
+        margin: 4px;
+        margin-top: 10px;
+      }
     }
   }
 }

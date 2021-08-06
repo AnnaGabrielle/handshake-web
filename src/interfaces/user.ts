@@ -6,4 +6,8 @@ export interface User {
   photo?: string;
   interests: string[];
   knowledges: string[];
+  skills: {
+    soft: string[];
+    hard: string[];
+  }
 }
