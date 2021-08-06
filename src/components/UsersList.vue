@@ -12,15 +12,11 @@
         <span class="user-card__info-job">{{ user.currentJob }}</span>
 
         <div class="knowledges">Áreas de conhecimento:
-          <span
-            class="user-card__info-knowledge"
-            v-for="(knowledge, index) in user.knowledges"
-            :key="2*index"
-          >
-            {{ knowledge }}
-          </span>
+          <Tag v-for="(knowledge, index) in user.knowledges" :key="5*index" :text="knowledge" />
         </div>
       </div>
+
+      <button class="user-card__button">Ver perfil</button>
     </div>
   </div>
 </template>
@@ -28,8 +24,12 @@
 <script lang="ts">
 import Vue from 'vue';
 import { User } from '@/interfaces';
+import Tag from './Tag.vue';
 
 export default Vue.extend({
+  components: {
+    Tag,
+  },
   props: {
     users: {
       type: Array as Vue.PropType<User[]>,
@@ -105,6 +105,17 @@ $fontFamily: 'AprovaSans', sans-serif;
         color: blue;
       }
     }
+  }
+
+  &__button {
+    background: #65FF90;
+    width: 140px;
+    height: 45px;
+    font-family: $fontFamily;
+    font-size: 18px;
+    margin: 0 25px;
+    border-radius: 10px;
+    border: 1px solid black;
   }
 }
 </style>

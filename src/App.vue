@@ -83,4 +83,9 @@ q:before, q:after {
   content: '';
   content: none;
 }
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
 </style>
