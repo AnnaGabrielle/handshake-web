@@ -35,9 +35,14 @@
           </div>
         </div>
 
-        <button class="profile__user-card-contact" @click="toggleContactModal()">
-          Fale comigo!
-        </button>
+        <div class="btns">
+          <button class="profile__user-card-contact" @click="toggleModal('contact')">
+            Fale comigo!
+          </button>
+          <button class="profile__user-card-contact" @click="toggleModal('rating')">
+            Recomendar
+          </button>
+        </div>
       </div>
     </div>
 
@@ -83,9 +88,9 @@
 
     <div v-if="showContactModal">
       <ContentModal
-        :contentType="'rating'"
+        :contentType="modalType"
         :showModal="showContactModal"
-        @onClose="toggleContactModal()"
+        @onClose="toggleModal()"
       />
     </div>
   </div>
@@ -128,8 +133,8 @@ export default Vue.extend({
     redirectToHome() {
       this.$router.push('/');
     },
-    toggleContactModal() {
-      this.modalType = 'contact';
+    toggleModal(modalType: 'contact' | 'rating') {
+      this.modalType = modalType;
       this.showContactModal = !this.showContactModal;
     },
   },
@@ -227,6 +232,21 @@ $fontFamily: 'AprovaSans', sans-serif;
           background: #4cec7a;
           color: #000;
           transition: all 80ms linear;
+        }
+      }
+
+      .btns {
+        display: flex;
+        flex-direction: column;
+
+        button:last-child {
+          margin-top: 15px;
+          background: rgba(196, 196, 196, 0.2);
+          color: black;
+
+          &:hover {
+            background-color: rgb(224, 224, 224);
+          }
         }
       }
     }

@@ -5,7 +5,9 @@
     </p>
 
     <div class="rating">
-      <StarRating v-model="rate" :increment="0.5" :star-size="30" />
+      <div class="stars">
+        <StarRating v-model="rate" :increment="0.5" :star-size="30" />
+      </div>
 
       <md-field class="field">
         <label>Deixe um comentário (opcional)</label>
@@ -70,8 +72,9 @@ p {
     }
   }
 
-  .field {
-    margin-top: 10px;
+  .stars {
+    margin-top: -15px;
+    margin-bottom: 10px;
   }
 
   .textarea {

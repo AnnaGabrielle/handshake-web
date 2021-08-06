@@ -8,7 +8,7 @@
         </div>
 
         <div class="content">
-          <span class="greeting">Olá, {{ currentUser.firstName }}!</span>
+          <span class="greeting">{{ greeting }}</span>
           <div class="message">
             <div class="img" />
             <div class="message-content">
@@ -56,9 +56,18 @@ export default Vue.extend({
           return 'Fale comigo!';
       }
     },
-  },
-  async mounted() {
-    console.log(this.$store.getters.currentUser);
+    greeting(): string {
+      switch (this.contentType) {
+        case 'contact':
+          return `Olá, ${this.currentUser.firstName}!`;
+
+        case 'rating':
+          return 'O que você achou do nosso papo?';
+
+        default:
+          return 'Fale comigo!';
+      }
+    },
   },
 });
 </script>
@@ -120,18 +129,16 @@ export default Vue.extend({
       font-weight: 700;
       letter-spacing: -1px;
       margin-bottom: 20px;
-      /* align-self: flex-start; */
     }
 
     .message {
       height: 280px;
       display: flex;
-      box-shadow: 0px 0px 7px 0.3px rgba(0,0,0,0.3);
       border-radius: 32px;
       width: 80%;
 
       .img {
-        width: 380px;
+        width: 219px;
         height: 100%;
         background-image: url('../assets/images/connection-modal.jpg');
         background-size: cover;
@@ -144,11 +151,12 @@ export default Vue.extend({
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding: 25px;
+        padding: 0 25px;
         font-family: 'AprovaSans';
         font-size: 19px;
         letter-spacing: -0.5px;
         flex-grow: 2;
+        max-width: 500px;
       }
     }
   }

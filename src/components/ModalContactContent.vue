@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <p>
       Fulano pode ser contatado a partir dos seguintes meios.
       Escolha um disponível e boa conversa! Handshake! :)
@@ -31,6 +31,13 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 130%;
+}
+
 p {
   margin-bottom: 30px;
   line-height: 37px;
@@ -39,25 +46,33 @@ p {
 .btns {
   button {
     width: 175px;
-    height: 40px;
-    margin-right: 20px;
+    height: 50px;
+    margin-right: 12px;
     border-radius: 26px;
-    background: #65FF90;
+    background: #c4c4c446;
     font-family: 'AprovaSans';
     font-size: 17px;
     font-weight: bold;
-    box-shadow: 0px 0px 8px 1px rgba(0,0,0,0.5);
+    transition: all 100ms linear;
+
+    &:hover {
+      background: #65FF90;
+    }
   }
 
   .last-btns-block {
     display: block;
-    margin-top: 20px;
+    margin-top: 12px;
   }
 
   .disabled {
-    background: #C4C4C4;
+    background: #c4c4c446;
     color: gray;
     cursor: not-allowed;
+
+    &:hover {
+      background: #c4c4c446;
+    }
   }
 }
 </style>
