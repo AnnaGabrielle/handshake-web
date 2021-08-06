@@ -9,17 +9,7 @@
 
       <div class="user-card__info">
         <span class="user-card__info-name">{{ user.firstName }} {{ user.lastName }}</span>
-        <span>{{ user.currentJob }}</span>
-
-        <div class="interests">Interesses:
-          <span
-            class="user-card__info-interest"
-            v-for="(interest, index) in user.interests"
-            :key="index"
-          >
-            {{ interest }}
-          </span>
-        </div>
+        <span class="user-card__info-job">{{ user.currentJob }}</span>
 
         <div class="knowledges">Áreas de conhecimento:
           <span
@@ -59,17 +49,21 @@ $fontFamily: 'AprovaSans', sans-serif;
 
 .users-list {
   width: 70%;
+  background-color: #F5F5F5;
+  border-radius: 8px;
+  padding: 15px;
 }
 
 .user-card {
   height: 170px;
   margin-bottom: 15px;
-  background: #C4C4C4;
+  background: #FFF;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 8px;
   cursor: pointer;
+  border: 1px solid black;
 
   &__image {
     width: 125px;
@@ -99,7 +93,11 @@ $fontFamily: 'AprovaSans', sans-serif;
       letter-spacing: -0.6px;
     }
 
-    .interests, .knowledges {
+    &-job {
+      font-style: italic;
+    }
+
+    .knowledges {
       display: flex;
       align-items: center;
 
