@@ -3,6 +3,7 @@ export interface User {
   currentJob: string;
   firstName: string;
   lastName: string;
+  bio: string;
   photo?: string;
   interests: string[];
   knowledges: string[];

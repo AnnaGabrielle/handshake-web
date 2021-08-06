@@ -82,7 +82,11 @@
     </div>
 
     <div v-if="showContactModal">
-      <ContactModal :showModal="showContactModal" @onClose="toggleContactModal()" />
+      <ContentModal
+        :contentType="'rating'"
+        :showModal="showContactModal"
+        @onClose="toggleContactModal()"
+      />
     </div>
   </div>
 </template>
@@ -92,22 +96,24 @@ import Vue from 'vue';
 import usersMock from '@/mocks/usersMock';
 import { User } from '@/interfaces';
 import Tag from '@/components/Tag.vue';
-import ContactModal from '@/components/ContactModal.vue';
+import ContentModal from '@/components/ContentModal.vue';
 
 interface Data {
   user: User | null;
   showContactModal: boolean;
+  modalType: string;
 }
 
 export default Vue.extend({
   components: {
     Tag,
-    ContactModal,
+    ContentModal,
   },
   data(): Data {
     return {
       user: null,
       showContactModal: false,
+      modalType: 'contact',
     };
   },
   computed: {
@@ -123,8 +129,8 @@ export default Vue.extend({
       this.$router.push('/');
     },
     toggleContactModal() {
+      this.modalType = 'contact';
       this.showContactModal = !this.showContactModal;
-      console.log(this.showContactModal);
     },
   },
 });

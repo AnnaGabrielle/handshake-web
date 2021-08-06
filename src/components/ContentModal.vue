@@ -4,35 +4,18 @@
       <div  @click.self="$emit('onClose')" class="modal">
         <div class="top">
           <img class="descologo" src="../assets/images/descologo.svg" alt="">
-          <span>Fale comigo!</span>
+          <span>{{ modalTitle }}</span>
         </div>
 
         <div class="content">
           <span class="greeting">Olá, {{ currentUser.firstName }}!</span>
-
           <div class="message">
             <div class="img" />
             <div class="message-content">
-              <p>
-                Fulano pode ser contatado a partir dos seguintes meios.
-                Escolha um disponível e boa conversa! Handshake! :)
-              </p>
-
-              <div class="btns">
-                <div class="first-btns-block">
-                  <button :class="{ 'disabled': !currentUser.contact.whatsapp }">Whatsapp</button>
-                  <button :class="{ 'disabled': !currentUser.contact.telegram }">Telegram</button>
-                </div>
-
-                <div class="last-btns-block">
-                  <button :class="{ 'disabled': !currentUser.contact.facebook }">Facebook</button>
-                  <button :class="{ 'disabled': !currentUser.contact.email }">E-mail</button>
-                </div>
-              </div>
+              <ModalContactContent v-if="contentType === 'contact'" />
+              <ModalRatingContent v-if="contentType === 'rating'" />
             </div>
-
           </div>
-
         </div>
       </div>
     </div>
@@ -40,19 +23,38 @@
 </template>
 
 <script lang="ts">
-import { User } from '@/interfaces';
 import Vue from 'vue';
+import { User } from '@/interfaces';
+import ModalContactContent from './ModalContactContent.vue';
+import ModalRatingContent from './ModalRatingContent.vue';
 
 export default Vue.extend({
+  components: { ModalContactContent, ModalRatingContent },
   props: {
     showModal: {
       type: Boolean,
       default: false,
     },
+    contentType: {
+      type: String,
+      default: 'contact',
+    },
   },
   computed: {
     currentUser(): User {
       return this.$store.getters.currentUser;
+    },
+    modalTitle(): string {
+      switch (this.contentType) {
+        case 'contact':
+          return 'Fale comigo!';
+
+        case 'rating':
+          return 'Recomendação';
+
+        default:
+          return 'Fale comigo!';
+      }
     },
   },
   async mounted() {
@@ -81,7 +83,7 @@ export default Vue.extend({
 }
 
 .modal {
-  width: 72%;
+  width: 1100px;
   height: 420px;
 
   .descologo {
@@ -108,7 +110,7 @@ export default Vue.extend({
     background: white;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     flex-direction: column;
     border-radius: 0 0 32px 32px;
     padding: 40px 60px;
@@ -118,6 +120,7 @@ export default Vue.extend({
       font-weight: 700;
       letter-spacing: -1px;
       margin-bottom: 20px;
+      /* align-self: flex-start; */
     }
 
     .message {
@@ -125,9 +128,10 @@ export default Vue.extend({
       display: flex;
       box-shadow: 0px 0px 7px 0.3px rgba(0,0,0,0.3);
       border-radius: 32px;
+      width: 80%;
 
       .img {
-        width: 320px;
+        width: 380px;
         height: 100%;
         background-image: url('../assets/images/connection-modal.jpg');
         background-size: cover;
@@ -139,41 +143,12 @@ export default Vue.extend({
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: flex-start;
+        align-items: center;
         padding: 25px;
         font-family: 'AprovaSans';
         font-size: 19px;
         letter-spacing: -0.5px;
-
-        p {
-          margin-bottom: 30px;
-          line-height: 37px;
-        }
-
-        .btns {
-          button {
-            width: 175px;
-            height: 40px;
-            margin-right: 20px;
-            border-radius: 26px;
-            background: #65FF90;
-            font-family: 'AprovaSans';
-            font-size: 17px;
-            font-weight: bold;
-            box-shadow: 0px 0px 8px 1px rgba(0,0,0,0.5);
-          }
-
-          .last-btns-block {
-            display: block;
-            margin-top: 20px;
-          }
-
-          .disabled {
-            background: #C4C4C4;
-            color: gray;
-            cursor: not-allowed;
-          }
-        }
+        flex-grow: 2;
       }
     }
   }
