@@ -19,6 +19,26 @@ import Vue from 'vue';
 import UsersList from '@/components/UsersList.vue';
 import usersMock from '@/mocks/usersMock';
 import { User } from '@/interfaces';
+import axios from 'axios';
+
+const DEFAULT_TOKEN = '';
+const HANDSHAKE_API_ENDPOINT = 'https://handshake-hackathon-api.herokuapp.com/users';
+
+const getUsers = async () => {
+  axios.interceptors.request.use((config) => {
+    const headers = {
+      ...config.headers,
+      Authorization: DEFAULT_TOKEN,
+    };
+    return {
+      ...config,
+      headers,
+    };
+  });
+
+  const response = await axios.get(HANDSHAKE_API_ENDPOINT);
+  return response?.data;
+};
 
 interface Data {
   users: User[];
@@ -36,6 +56,9 @@ export default Vue.extend({
       userSearch: '',
     };
   },
+  async created() {
+    await getUsers();
+  },
   computed: {
     usersFiltered(): User[] {
       return this.searchUser();
@@ -52,15 +75,25 @@ export default Vue.extend({
       }, []);
       return allUsers;
     },
-    searchEachFild(id: number) {
+    searchEachFild(id: number): boolean {
       const user = this.users.find((userFind) => userFind.id === id);
-      if (!user) return;
-      const foundField = (Object.values(user)).find((field) => {
+      if (!user) return false;
+      const wordArray = this.userSearch.split(/\s+/);
+      if (wordArray.length === 1) {
+        const foundField = (Object.values(user)).find((field) => {
+          const processedField = this.processString(field.toString());
+          return processedField.includes(this.processString(this.userSearch));
+        });
+        return foundField;
+      }
+      const foundField = wordArray.filter((word) => (Object.values(user)).find((field) => {
         const processedField = this.processString(field.toString());
-        return processedField.includes(this.processString(this.userSearch));
-      });
-      // eslint-disable-next-line consistent-return
-      return foundField;
+        return processedField.includes(this.processString(word));
+      }));
+      if (foundField.length === wordArray.length) {
+        return true;
+      }
+      return false;
     },
     processString(item: string) {
       return item
@@ -83,15 +116,15 @@ export default Vue.extend({
 }
 
 input {
-  width: 50%;
+  width: 70%;
   height: 48px;
   box-shadow: 0 0 9px 1px lightgray;
   border-radius: 10px;
   margin-bottom: 10px;
   padding: 20px;
   outline: none;
+  font-size: 24px;
   font-family: 'AprovaSans', sans-serif;
-  font-size: 17px;
 }
 input:focus {
   border: 1px solid #666;
