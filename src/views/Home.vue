@@ -1,12 +1,16 @@
 <template>
   <div class="home">
     <div class="input-area">
-        <input
-          v-model="userSearch"
-          class="input"
-          type="text"
-          placeholder="Encontre suas conexões"
-        />
+        <div class="input-bar">
+          <input
+            v-model="userSearch"
+            class="input"
+            type="text"
+            placeholder="Encontre suas conexões"
+          />
+
+          <md-icon class="search-icon">search</md-icon>
+        </div>
     </div>
     <div class="list-container">
       <UsersList :users="usersFiltered" />
@@ -113,15 +117,27 @@ export default Vue.extend({
 .input-area {
   display: flex;
   justify-content: center;
+
+  .input-bar {
+    position: relative;
+    width: 1100px;
+
+    .search-icon {
+      position: absolute;
+      right: 12px;
+      top: 12px;
+    }
+  }
 }
 
 input {
-  width: 70%;
+  width: 100%;
   height: 48px;
   box-shadow: 0 0 9px 1px lightgray;
   border-radius: 10px;
   margin-bottom: 10px;
   padding: 20px;
+  padding-right: 50px;
   outline: none;
   font-size: 18px;
   font-family: 'AprovaSans', sans-serif;
