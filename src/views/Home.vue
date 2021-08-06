@@ -60,9 +60,6 @@ export default Vue.extend({
       userSearch: '',
     };
   },
-  async created() {
-    console.log(this.usersFiltered);
-  },
   computed: {
     currentUser(): User {
       return this.$store.getters.currentUser;
@@ -73,7 +70,6 @@ export default Vue.extend({
   },
   methods: {
     searchUser() {
-      console.log('allUsersssss', this.currentUser);
       if (this.userSearch === '') return this.users;
       const allUsers = this.users.reduce((usersFounded: User[], user: User) => {
         const foundedField = this.searchEachFild(user.id);
@@ -82,12 +78,8 @@ export default Vue.extend({
         return usersFounded;
       }, []);
 
-      console.log('allUsersssss', allUsers);
-
       return allUsers.reduce((acc: User[], u: User) => {
-        console.log(u);
         this.currentUser.interests.forEach((i) => {
-          console.log(i);
           if (u.knowledges.includes(i)) {
             acc.push(u);
           }
