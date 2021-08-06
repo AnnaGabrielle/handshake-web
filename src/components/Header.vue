@@ -4,7 +4,8 @@
         <img src="../assets/images/descologo.svg" alt="">
         <h5>Handshake</h5>
       </div>
-      <div class="profile" @click="goToProfile()">
+
+      <div v-if="!isSignUpRoute" class="profile" @click="goToProfile()">
         <md-avatar class="md-avatar-icon md-primary">
           <img v-if="currentUser.photo" :src="currentUser.photo" alt="People">
           <div v-else> {{ userLetter }} </div>
@@ -27,6 +28,9 @@ export default Vue.extend({
     },
     userLetter(): string {
       return this.currentUser.firstName[0] + this.currentUser.lastName[0];
+    },
+    isSignUpRoute(): boolean {
+      return this.$route.path.includes('/cadastro');
     },
   },
   data() {
