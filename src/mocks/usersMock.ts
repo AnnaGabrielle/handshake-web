@@ -14,6 +14,12 @@ export default [
       hard: ['proatividade'],
       soft: ['React', 'Vue'],
     },
+    contact: {
+      email: 'lucas.murakami@descomplica.com.br',
+      facebook: '',
+      telegram: 'luucaskenji',
+      whatsapp: '5581995510819',
+    },
   },
   {
     id: 2,
@@ -27,6 +33,12 @@ export default [
     skills: {
       hard: ['proatividade'],
       soft: ['React', 'Vue'],
+    },
+    contact: {
+      email: '',
+      facebook: 'https://www.facebook.com/annagabrielle.lamellasph',
+      telegram: 'AnnaGabriellePH',
+      whatsapp: '5521984593589',
     },
   },
   {
@@ -42,6 +54,12 @@ export default [
       hard: ['proatividade'],
       soft: ['React', 'Vue'],
     },
+    contact: {
+      email: '',
+      facebook: '',
+      telegram: '',
+      whatsapp: '5521982428094',
+    },
   },
   {
     id: 4,
@@ -56,6 +74,12 @@ export default [
       hard: ['proatividade'],
       soft: ['React', 'Vue'],
     },
+    contact: {
+      email: '',
+      facebook: '',
+      telegram: '',
+      whatsapp: '5521965952566',
+    },
   },
   {
     id: 5,
@@ -69,6 +93,12 @@ export default [
     skills: {
       hard: ['proatividade'],
       soft: ['React', 'Vue'],
+    },
+    contact: {
+      email: '',
+      facebook: '',
+      telegram: '',
+      whatsapp: '5521999259303',
     },
   },
   {

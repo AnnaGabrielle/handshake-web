@@ -4,13 +4,13 @@
         <img src="../assets/images/descologo.svg" alt="">
         <h5>Handshake</h5>
       </div>
-      <div class="profile" @click="profileToggle">
+      <div class="profile" @click="goToProfile()">
         <md-avatar class="md-avatar-icon md-primary">
-          <img v-if="meUser.photo" :src="meUser.photo" alt="People">
+          <img v-if="currentUser.photo" :src="currentUser.photo" alt="People">
           <div v-else> {{ userLetter }} </div>
         </md-avatar>
         <div class="name">
-          {{ meUser.firstName }}
+          {{ currentUser.firstName }}
         </div>
       </div>
     </header>
@@ -18,15 +18,15 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import meUser from '@/mocks/me-mock';
+import { User } from '@/interfaces';
 
 export default Vue.extend({
   computed: {
-    meUser() {
-      return meUser;
+    currentUser(): User {
+      return this.$store.getters.currentUser;
     },
-    userLetter() {
-      return meUser.firstName[0] + meUser.lastName[0];
+    userLetter(): string {
+      return this.currentUser.firstName[0] + this.currentUser.lastName[0];
     },
   },
   data() {
@@ -35,8 +35,8 @@ export default Vue.extend({
     };
   },
   methods: {
-    profileToggle() {
-      this.profileOpen = !this.profileOpen;
+    goToProfile() {
+      this.$router.push(`/perfil/${this.currentUser.id}`);
     },
     goToHome() {
       this.$router.push('/');
