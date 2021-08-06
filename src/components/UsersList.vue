@@ -63,7 +63,12 @@ $fontFamily: 'AprovaSans', sans-serif;
   align-items: center;
   border-radius: 8px;
   cursor: pointer;
-  border: 1px solid black;
+  border: 1px solid #B0B0B0;
+
+  &:hover {
+    border-color: black;
+    transition: border 600ms linear;
+  }
 
   &__image {
     width: 125px;
