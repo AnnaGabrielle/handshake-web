@@ -5,13 +5,13 @@ export default [
     id: 1,
     firstName: 'Lucas',
     lastName: 'Murakami',
-    bio: '',
+    bio: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed possimus iste dolorum aliquam quo inventore, porro voluptatum animi culpa accusantium vitae obcaecati atque recusandae quos, at blanditiis odit. Et, ad.',
     currentJob: 'Software Engineer',
     knowledges: ['produto'],
     interests: ['produto'],
     skills: {
-      hard: ['React', 'Vue'],
-      soft: ['Comunicação'],
+      hard: ['proatividade'],
+      soft: ['React', 'Vue'],
     },
     contact: {
       email: 'lucas.murakami@descomplica.com.br',
@@ -24,13 +24,13 @@ export default [
     id: 2,
     firstName: 'Anna',
     lastName: 'Lamellas',
-    bio: '',
+    bio: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed possimus iste dolorum aliquam quo inventore, porro voluptatum animi culpa accusantium vitae obcaecati atque recusandae quos, at blanditiis odit. Et, ad.',
     currentJob: 'Software Engineer',
     knowledges: ['produto'],
     interests: ['produto'],
     skills: {
-      hard: ['React', 'Vue'],
-      soft: ['Organização'],
+      hard: ['proatividade'],
+      soft: ['React', 'Vue'],
     },
     contact: {
       email: '',
@@ -43,13 +43,13 @@ export default [
     id: 3,
     firstName: 'Lucas',
     lastName: 'Ricarte',
-    bio: '',
+    bio: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed possimus iste dolorum aliquam quo inventore, porro voluptatum animi culpa accusantium vitae obcaecati atque recusandae quos, at blanditiis odit. Et, ad.',
     currentJob: 'Software Engineer',
     knowledges: ['produto'],
     interests: ['produto'],
     skills: {
-      hard: ['React', 'Vue'],
-      soft: ['Organização'],
+      hard: ['proatividade'],
+      soft: ['React', 'Vue'],
     },
     contact: {
       email: '',
@@ -62,13 +62,13 @@ export default [
     id: 4,
     firstName: 'Livia',
     lastName: 'Lino',
-    bio: '',
+    bio: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed possimus iste dolorum aliquam quo inventore, porro voluptatum animi culpa accusantium vitae obcaecati atque recusandae quos, at blanditiis odit. Et, ad.',
     currentJob: 'Software Engineer',
     knowledges: ['produto'],
     interests: ['produto'],
     skills: {
-      hard: ['React', 'Vue'],
-      soft: ['proatividade'],
+      hard: ['proatividade'],
+      soft: ['React', 'Vue'],
     },
     contact: {
       email: '',
@@ -81,13 +81,13 @@ export default [
     id: 5,
     firstName: 'Aline',
     lastName: 'Loureiro',
-    bio: '',
+    bio: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed possimus iste dolorum aliquam quo inventore, porro voluptatum animi culpa accusantium vitae obcaecati atque recusandae quos, at blanditiis odit. Et, ad.',
     currentJob: 'Software Engineer',
     knowledges: ['produto'],
     interests: ['produto'],
     skills: {
-      hard: ['React', 'Vue'],
-      soft: ['proatividade'],
+      hard: ['proatividade'],
+      soft: ['React', 'Vue'],
     },
     contact: {
       email: '',
@@ -105,8 +105,8 @@ export default [
     knowledges: ['produto'],
     interests: ['produto'],
     skills: {
-      hard: ['React', 'Vue'],
-      soft: ['proatividade'],
+      hard: ['proatividade'],
+      soft: ['React', 'Vue'],
     },
   },
   {
@@ -118,8 +118,8 @@ export default [
     knowledges: ['produto'],
     interests: ['produto'],
     skills: {
-      hard: ['React', 'Vue'],
-      soft: ['liderança'],
+      hard: ['proatividade'],
+      soft: ['React', 'Vue'],
     },
   },
   {
@@ -131,8 +131,8 @@ export default [
     knowledges: ['produto'],
     interests: ['produto'],
     skills: {
-      hard: ['React', 'Vue'],
-      soft: ['liderança'],
+      hard: ['proatividade'],
+      soft: ['React', 'Vue'],
     },
   },
   {
@@ -144,8 +144,8 @@ export default [
     knowledges: ['produto'],
     interests: ['produto'],
     skills: {
-      hard: ['React', 'Vue'],
-      soft: ['liderança'],
+      hard: ['proatividade'],
+      soft: ['React', 'Vue'],
     },
   },
 ] as User[];
