@@ -1,5 +1,9 @@
 <template>
   <div class="profile">
+    <button class="back-btn" @click="redirectToHome()">
+      <md-icon class="icon">arrow_back_ios_new</md-icon>
+    </button>
+
     <div class="profile__user">
       <div class="profile__user-card">
         <div class="profile__user-card-image" />
@@ -30,6 +34,10 @@
             />
           </div>
         </div>
+
+        <button class="profile__user-card-contact">
+          Fale comigo!
+        </button>
       </div>
     </div>
 
@@ -102,6 +110,11 @@ export default Vue.extend({
   mounted() {
     this.user = usersMock.find((u) => u.id === this.profileUserId) || null;
   },
+  methods: {
+    redirectToHome() {
+      this.$router.push('/');
+    },
+  },
 });
 </script>
 
@@ -113,6 +126,24 @@ $fontFamily: 'AprovaSans', sans-serif;
   display: flex;
   align-items: center;
   flex-direction: column;
+
+  .back-btn {
+    position: absolute;
+    top: 100px;
+    left: 30px;
+    background: none;
+    border-radius: 50%;
+    border: 1px solid black;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .icon {
+      color: black;
+    }
+  }
 
   &__user {
     width: 70%;
@@ -162,6 +193,17 @@ $fontFamily: 'AprovaSans', sans-serif;
             color: blue;
           }
         }
+      }
+
+      &-contact {
+        background: #65FF90;
+        width: 180px;
+        height: 45px;
+        font-family: $fontFamily;
+        font-size: 18px;
+        margin: 0 25px;
+        border-radius: 10px;
+        border: 1px solid black;
       }
     }
   }
